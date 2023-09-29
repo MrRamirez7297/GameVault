@@ -1,14 +1,12 @@
 package com.example.videogamestore.models;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
 public class VideoGamesModel {
     
     @Id
-    @GeneratedValue
     private Long id;
 
     private String name;
@@ -16,13 +14,14 @@ public class VideoGamesModel {
     private String description;
     private Double price;
     private String genre;
-    private String rating;
+    private Double rating;
     
     public VideoGamesModel() {
     }
 
-    public VideoGamesModel(String name, String imageUrl, String description, Double price, String genre,
-            String rating) {
+    public VideoGamesModel(Long id, String name, String imageUrl, String description, Double price, String genre,
+            Double rating) {
+        this.id = id;
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -79,11 +78,11 @@ public class VideoGamesModel {
         this.genre = genre;
     }
 
-    public String getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
 
