@@ -61,7 +61,7 @@ public class VideoGamesController {
                         String name = (String) randomData.get("name");
                         String imageUrl = (String) randomData.get("background_image");
                         Double rating =(Double) randomData.get("rating");
-                        return new VideoGamesModel(Long.valueOf(randomId), name, imageUrl, "Nothing", 69.99, "genre", rating);
+                        return new VideoGamesModel(name, imageUrl, "Nothing", 69.99, "genre", rating);
                     });
             });
     }
