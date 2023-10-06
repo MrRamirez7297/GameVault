@@ -1,4 +1,4 @@
-package com.example.videogamestore.cartfeatures;
+package com.example.videogamestore.models;
 
 import java.util.List;
 

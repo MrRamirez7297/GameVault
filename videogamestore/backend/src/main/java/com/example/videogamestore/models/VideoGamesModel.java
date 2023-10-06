@@ -3,6 +3,7 @@ package com.example.videogamestore.models;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 
 @Entity
 public class VideoGamesModel {
@@ -13,6 +14,8 @@ public class VideoGamesModel {
 
     private String name;
     private String imageUrl;
+
+    @Lob
     private String description;
     private Double price;
     private String genre;

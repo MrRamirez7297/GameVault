@@ -1,6 +1,15 @@
-package com.example.videogamestore.cartfeatures;
+package com.example.videogamestore.models;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+
+@Entity
 public class CartItems {
+
+    @Id
+    @GeneratedValue
+    private Long id;
     
     private String gameTitle;
     private int quantity;
