@@ -45,13 +45,14 @@ function Catalog() {
                   <div>
                     <p2 id="game-info">{game.description}</p2>
                   </div>
-                  
+                  <Link to='/game-page'>More Info.</Link>
                 </div>
               </div>
             </li>
           ))}
         </ul>
-        <Link to='/game-page'>More Info.</Link>
+       
+        
       </div>
 
     </div>
