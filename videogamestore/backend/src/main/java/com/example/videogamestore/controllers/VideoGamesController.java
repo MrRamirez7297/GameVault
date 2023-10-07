@@ -1,6 +1,8 @@
 package com.example.videogamestore.controllers;
 
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +16,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 import com.example.videogamestore.models.VideoGamesModel;
 import com.example.videogamestore.repositories.VideoGameRepository;
+
+import reactor.core.publisher.Mono;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
@@ -39,6 +43,26 @@ public class VideoGamesController {
         videoGameRepository.deleteById(id);
     }
 
-    
+    @GetMapping("/admin/server-game")
+    public Mono<VideoGamesModel> getServerGame() {
+        return webClient.get()
+            .uri("https://api.rawg.io/api/games?key=6bacc44869e64a04b31bbfeef32a76f5")
+            .retrieve()
+            .bodyToMono(Map.class)
+            .flatMap(data -> {
+                int count = (int) data.get("count");
+                int randomId = new Random().nextInt(count + 1);
+                return webClient.get()
+                    .uri("https://api.rawg.io/api/games/"+ randomId +"?key=6bacc44869e64a04b31bbfeef32a76f5")
+                    .retrieve()
+                    .bodyToMono(Map.class)
+                    .map(randomData -> {
+                        String name = (String) randomData.get("name");
+                        String imageUrl = (String) randomData.get("background_image");
+                        Double rating =(Double) randomData.get("rating");
+                        return new VideoGamesModel(name, imageUrl, "Nothing", 69.99, "genre", rating);
+                    });
+            });
+    }
 
 }

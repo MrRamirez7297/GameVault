@@ -1,28 +1,44 @@
 package com.example.videogamestore.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "T_AllGames")
 public class VideoGamesModel {
     
     @Id
     @GeneratedValue
     private Long id;
 
+    @Column(length = 100)
     private String name;
+
+    @Column(length = 500)
     private String imageUrl;
+
+    @Lob
+    @Column(length = 500)
     private String description;
+
+    @Column(length = 100)
     private Double price;
+
+    @Column(length = 500)
     private String genre;
-    private String rating;
+
+    @Column(length = 100)
+    private Double rating;
     
     public VideoGamesModel() {
     }
 
     public VideoGamesModel(String name, String imageUrl, String description, Double price, String genre,
-            String rating) {
+            Double rating) {
         this.name = name;
         this.imageUrl = imageUrl;
         this.description = description;
@@ -31,6 +47,7 @@ public class VideoGamesModel {
         this.rating = rating;
     }
 
+    
     public Long getId() {
         return id;
     }
@@ -79,19 +96,20 @@ public class VideoGamesModel {
         this.genre = genre;
     }
 
-    public String getRating() {
+    public Double getRating() {
         return rating;
     }
 
-    public void setRating(String rating) {
+    public void setRating(Double rating) {
         this.rating = rating;
     }
+
+    
 
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
         result = prime * result + ((name == null) ? 0 : name.hashCode());
         result = prime * result + ((imageUrl == null) ? 0 : imageUrl.hashCode());
         result = prime * result + ((description == null) ? 0 : description.hashCode());
@@ -110,11 +128,6 @@ public class VideoGamesModel {
         if (getClass() != obj.getClass())
             return false;
         VideoGamesModel other = (VideoGamesModel) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
-            return false;
         if (name == null) {
             if (other.name != null)
                 return false;
