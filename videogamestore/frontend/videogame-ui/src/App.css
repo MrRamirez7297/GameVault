@@ -82,3 +82,12 @@ nav {
 .input {
   margin: 30px;
 }
+
+.game-library-items {
+  background-color: rgb(90, 151, 139);
+  cursor: pointer;
+}
+
+ul{
+  list-style-type: none;
+}
