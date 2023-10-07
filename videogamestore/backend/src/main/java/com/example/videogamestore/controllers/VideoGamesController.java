@@ -44,25 +44,6 @@ public class VideoGamesController {
         videoGameRepository.deleteById(id);
     }
 
-    @GetMapping("/admin/server-game")
-    public Mono<VideoGamesModel> getServerGame() {
-        return webClient.get()
-            .uri("https://api.rawg.io/api/games?key=6bacc44869e64a04b31bbfeef32a76f5")
-            .retrieve()
-            .bodyToMono(Map.class)
-            .flatMap(data -> {
-                int count = (int) data.get("count");
-                int randomId = new Random().nextInt(count + 1);
-                return webClient.get()
-                    .uri("https://api.rawg.io/api/games/"+ randomId +"?key=6bacc44869e64a04b31bbfeef32a76f5")
-                    .retrieve()
-                    .bodyToMono(Map.class)
-                    .map(randomData -> {
-                        String name = (String) randomData.get("name");
-                        String imageUrl = (String) randomData.get("background_image");
-                        Double rating =(Double) randomData.get("rating");
-                        return new VideoGamesModel(name, imageUrl, "Nothing", 69.99, "genre", rating);
-                    });
-            });
-    }
+    
+
 }
