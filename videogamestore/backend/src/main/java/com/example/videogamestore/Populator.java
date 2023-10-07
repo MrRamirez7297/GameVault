@@ -289,6 +289,82 @@ public class Populator implements CommandLineRunner {
             "Action, RPG",
             88.0);
             vgRepository.save(game30);
+            
+        VideoGamesModel game31 = new VideoGamesModel(
+            "Call of Duty: Modern Warfare 2",
+            "https://cdn.akamai.steamstatic.com/steam/apps/10180/capsule_616x353.jpg",
+            "Continuation of the sensational first-person shooter from Infinity Ward and Activision. It is rather difficult to maintain a high level of games every year, but it worked out in the sixth part of the series. The game continues the storyline of the previous part. As in any other game of the series, the multiplayer in Modern Warfare 2 takes a special place. Each match is a mission, for which you need to come up with new strategies to complete. As in the past, new weapons and perks are opened for the execution of tasks.",
+            19.99,
+            "Action, RPG",
+            86.0);
+            vgRepository.save(game31);
+
+        VideoGamesModel game32 = new VideoGamesModel(
+            "Bioshock Infinite",
+            "https://i.ytimg.com/vi/9zWdZTTZF80/maxresdefault.jpg",
+            "The third game in the series, Bioshock takes the story of the underwater confinement within the lost city of Rapture and takes it in the sky-city of Columbia. Players will follow Booker DeWitt, a private eye with a military past; as he will attempt to wipe his debts with the only skill he’s good at – finding people. Aside from obvious story and style differences, this time Bioshock protagonist has a personality, character, and voice, no longer the protagonist is a silent man, trying to survive.",
+            29.99,
+            "Action, Shooter",
+            94.0);
+            vgRepository.save(game32);
+
+        VideoGamesModel game33 = new VideoGamesModel(
+            "Half-Life",
+            "https://i.ytimg.com/vi/UybtbhuzpbU/maxresdefault.jpg",
+            "Half-Life is the original game in the series. Being a revolutionary at the time, we follow the story of Gordon Freeman - a silent scientist at the facility called Black Mesa. Arriving late at work and hastily doing his routine he runs into the experiment field. However, the experiment goes completely wrong and opens a portal to a completely different dimension called Xen. The laboratory is destroyed as well as the facility itself, as unknown creatures like Vortigaunts are now everywhere in the facility. Gordon must battle his way to the surface and find a way to close the portal.",
+            9.99,
+            "Action, Shooter, Puzzle, Platformer",
+            96.0);
+            vgRepository.save(game33);
+
+        VideoGamesModel game34 = new VideoGamesModel(
+            "Borderlands",
+            "https://assetsio.reedpopcdn.com/borderlands_nzvPp8w.jpg",
+            "Pandora is a dangerous planet, so it makes sense that the strongest people will dominate it. 4 Vault Hunters arrive to find the legendary Vault found themselves at the Fyrestone, where mysterious girl only known as Angel guides them, helping to build the reputation of problem solvers. Eventually, players will be tasked to find the first piece, of the Vault Key. By being a story-driven first-person shooter with RPG elements, Borderlands allows adjusting the playstyle by finding different weapons, leveling up the character and improving some skills or attributes. Cooperative in nature, Borderlands can be played with up to 3 other players in total, where players can take the roles of 4 different characters: Brick the Berserker, Mordecai the Hunter, Lilith the Siren and Roland the Soldier.",
+            29.99,
+            "Action, Shooter, RPG",
+            81.0);
+            vgRepository.save(game34);
+
+        VideoGamesModel game35 = new VideoGamesModel(
+            "Cyberpunk 2077",
+            "https://static.cdprojektred.com/cms.cdprojektred.com/16x9_big/b9ea2dc46d95cf9fa3f77209e27ae7a6488368f1-1920x1080.jpg",
+            "Cyberpunk 2077 is a science fiction game loosely based on the role-playing game Cyberpunk 2020. The game is set in the year 2077 in a fictional futuristic metropolis Night City in California. In the world of the game, there are developed cybernetic augmentations that enhance people's strength, agility, and memory. The city is governed by corporations. Many jobs are taken over by the robots, leaving a lot of people poor and homeless. Night City has a roaring underworld, with black markets, underground surgeons, drug dealers, and street gangs abound. The player controls V from the first person view, with the third-person view used for cutscenes only. The protagonist can travel across the city on feet or using various vehicles. There are many options for the character customization, including three character classes, and a variety of augmentations V can install to enhance his or her abilities.",
+            59.99,
+            "Action, Adventure, RPG",
+            73.0);
+            vgRepository.save(game35);
+
+        VideoGamesModel game36 = new VideoGamesModel(
+            "Horizon Zero Dawn",
+            "https://www.guerrilla-games.com/media/Games/Horizon/horizon-zero-dawn-card-image-v2-768w.jpg",
+            "Horizon Zero Dawn is an experiment. A very impressive experiment that actually succeeded. Having a very curious mix of cyberpunk and prehistorical styles and esthetic, the game provides us with quite a unique experience. We need to arm ourselves with arrows and a bow, with a spear or any other prehistorical-ish weapon in order to defeat out enemies - dinosaur-mechanisms that are spread around the world. If that wasn't enough, Aloy our main protagonist can control an AI named GAIA. Being an outcast with her father Rost, Aloy must restore her position in the tribe and save the world by stopping the Eclipse, a cult that wants to rule the world. Join her on that journey, exploring the world and people that live in such hard surroundings.",
+            49.99,
+            "Action, Adventure, RPG",
+            89.0);
+            vgRepository.save(game36);
+
+        VideoGamesModel game37 = new VideoGamesModel(
+            "TEKKEN 7",
+            "https://gamersgatep.imgix.net/5/e/5/522f5e1dbda6c283661e5695b2a8af9961b665e5.jpg",
+            "Tekken 7 is a fighting game developed by Bandai Namco Entertainment. It is the ninth installment in the series. An unnamed journalist investigates the Mishima family history after his family got killed in a war that was started by Jin Kazama. In his investigation, the journalist tries to find out why did Jin's grandfather kill his own wife and threw his son Kazuya down the cliff. At the same time, Jin goes into hiding after defeating an ancient demon named Azazel while his grandfather takes over Mishima Zaibatsu. The world war goes on. Just like the previous games in the series (apart from Tekken Tag Tournament 1 & 2), Tekken 7's gameplay revolves around one-on-one hand-to-hand fights. Players are free to choose one of 43 playable characters. Every character has their own personal list of attacks and combos and drastically differs in play style.",
+            13.99,
+            "Action, Sports, Fighting",
+            82.0);
+            vgRepository.save(game37);
+
+        VideoGamesModel game38 = new VideoGamesModel(
+            "NBA 2K20",
+            "https://thebetanetwork.net/wp-content/uploads/2020/06/nba-2k20.jpg",
+            "NBA 2K has evolved into much more than a basketball simulation. 2K continues to redefine what’s possible in sports gaming with NBA 2K20, featuring best in class graphics & gameplay, ground breaking game modes, and unparalleled player control and customization. Plus, with its immersive open-world Neighborhood, NBA 2K20 is a platform for gamers and ballers to come together and create what’s next in basketball culture.",
+            5.99,
+            "Action, Simulation, Sports",
+            76.0);
+            vgRepository.save(game38);
+
+        
+
+        
     }
 }
 
