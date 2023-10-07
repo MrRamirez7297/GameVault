@@ -30,11 +30,8 @@ public class VideoGamesModel {
 
     @Column(length = 500)
     private String genre;
-<<<<<<< HEAD
-=======
 
     @Column(length = 100)
->>>>>>> ec2e3fca01059d8917b3faf06fa0d3a959addf63
     private Double rating;
     
     public VideoGamesModel() {
