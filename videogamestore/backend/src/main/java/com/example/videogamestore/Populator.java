@@ -109,6 +109,15 @@ public class Populator implements CommandLineRunner {
             "Action",
             null);
             vgRepository.save(game10);
+
+        // VideoGamesModel game11 = new VideoGamesModel(
+        //     "Assassin's Creed Mirage",
+        //     "https://www.dsogaming.com/wp-content/uploads/2022/09/Assassins-Creed-Mirage-new-artwork-2-672x330.jpg",
+        //     "In Assassin's Creed Mirage, you are Basim, a cunning street thief with nightmarish visions seeking answers and justice. Join an ancient organization and come to understand a new creed – one that will change Basim’s fate in ways he never could have imagined. Journey to Alamut, the legendary home of the Assassins who laid the foundations of the Creed in this heartfelt homage to the game that started it all.",
+        //     49.99,
+        //     "Action",
+        //     null);
+        //     vgRepository.save(game11);
     }
 }
 
