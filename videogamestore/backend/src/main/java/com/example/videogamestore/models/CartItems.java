@@ -13,12 +13,12 @@ public class CartItems {
     
     private String gameTitle;
     private int quantity;
-    private double price;
+    private Double price;
     
     public CartItems() {
     }
 
-    public CartItems(String gameTitle, int quantity, double price) {
+    public CartItems(String gameTitle, int quantity, Double price) {
         this.gameTitle = gameTitle;
         this.quantity = quantity;
         this.price = price;
@@ -44,7 +44,7 @@ public class CartItems {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
