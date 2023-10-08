@@ -24,7 +24,7 @@ function Catalog() {
 
   return (
     <div class="game-container">
-      <h1>Game Library goes here! </h1>
+      <h1 class="game-library-text">Game Library goes here! </h1>
       <div id="game-library-box">
         <ul id="game-items">
           {Catalog.map((game) => (

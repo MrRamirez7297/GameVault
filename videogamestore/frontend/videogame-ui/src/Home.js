@@ -18,13 +18,13 @@ function Home() {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div class="container-item2">
-        <img
+      <div >
+        <img class="container-item2"
           id="banner"
           src="https://i.stack.imgur.com/YIZTm.jpg"
           alt="game-collage"
-          height="550px"
-          width="1150px"
+          height="600px"
+          width="1500px"
         />
       </div>
     </div>
