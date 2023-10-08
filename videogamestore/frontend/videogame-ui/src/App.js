@@ -32,12 +32,7 @@ function App() {
         <Route path="/all-games" element={<Catalog />} />
         <Route path="/your-cart" element={<Cart />} />
         <Route path="/search-game" element={<Search />} />
-        <Route path="/game-page" element={<GamePage />}></Route>
-
-        
-        {/* <Route path="" element={<Checkout />} />
-        <Route path="" element={<VideoGame />} />
-        <Route path="" element={<OrderConformation />} /> */}
+        <Route path="/game-page" element={<GamePage />} />
       </Routes>
 </Router> 
 </div>
