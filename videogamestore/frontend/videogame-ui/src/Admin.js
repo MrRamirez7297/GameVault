@@ -49,6 +49,14 @@ function Admin() {
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
                     ></input>
+                    <label for= "#game-price">Price</label>
+                    <input
+                    type="text"
+                        id="game-price"
+                        name="price"
+                        value={price}
+                        onChange={(e) => setImageUrl(e.target.value)}
+                    ></input>
                 </div>
 
                 <div>
