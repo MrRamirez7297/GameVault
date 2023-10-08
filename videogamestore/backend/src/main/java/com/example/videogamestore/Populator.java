@@ -362,7 +362,14 @@ public class Populator implements CommandLineRunner {
             76.0);
             vgRepository.save(game38);
 
-        
+        VideoGamesModel game39 = new VideoGamesModel(
+            "Tony Hawk's Pro Skater 1 + 2",
+            "https://cdn.mos.cms.futurecdn.net/edEUyovVt2zf7bbyWY4DL6-1200-80.jpg",
+            "Play the fully-remastered Tony Hawk’s™ Pro Skater™ & Tony Hawk’s™ Pro Skater™ 2 games in one epic collection, rebuilt from the ground up in incredible HD. Skate as the legendary Tony Hawk and the full pro roster. Listen to songs from the era-defining soundtrack. Hit insane trick combos with the iconic handling of the Tony Hawk’s™ Pro Skater™ series. Play all the original modes and go head-to-head with local 2-Player modes. Show off your style and creativity with upgraded Create-A-Park and Create-A-Skater features. Compete against players from around the world in Multiplayer modes and leaderboards.",
+            19.99,
+            "Sports, Arcade",
+            88.0);
+            vgRepository.save(game39);
 
         
     }
