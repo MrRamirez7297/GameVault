@@ -5,18 +5,39 @@ import './App.css';
 
 
 function Cart() {
+    const [gameCollection, setGameCollection] = useState([]);
+
+    useEffect(() => {
+        async function fetchCollection() {
+            try {
+                const { data } = await axios.get('http://localhost:8080/cart');
+                setGameCollection(data);
+            }
+            catch (error) {
+                console.error('Error fetching collection: ', error);
+            }
+        }
+
+        fetchCollection();
+    }, []);
+
+
+
+
+
+
+
+
     return (
 
 
         <div class="cart-container">
             <h1>Your Cart</h1>
-            <div id="cart"> <img
-                id="banner"
-                src="https://images.vexels.com/media/users/3/128010/isolated/preview/3d16fdf3b9dde0c021f67bf5ae1d4cc4-hand-drawn-shopping-cart.png"
-                alt="game-collage"
-                height="200px"
-                width="200px"
-            /></div>
+            <ul>
+                {gameCollection.map( game => (
+                    <li key={game.id}>{game.name} <div>{game.image}</div></li>
+                ))}
+            </ul>
         </div>
     );
 }
