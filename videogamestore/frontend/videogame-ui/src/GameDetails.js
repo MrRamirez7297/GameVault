@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
+import { useCart } from "./CartContext";;
 
 function GameDetails() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
+  const { addToCart } = useCart();
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -18,6 +20,15 @@ function GameDetails() {
 
     fetchGameDetails();
   }, [id]);
+
+  const addToCartHandler = () => {
+    // Check if a game is loaded and add it to the cart
+    if (game) {
+      addToCart(game); // Assuming addToCart accepts a game object
+      // You can provide user feedback here (e.g., a message)
+      alert("Game added to cart!");
+    }
+  };
 
   return (
     <div>
@@ -40,7 +51,7 @@ function GameDetails() {
 
           <div class="game-detail-buttons">
             <button>Buy Now</button>
-            <button>Add to cart</button>
+            <button onClick={addToCartHandler}>Add to cart</button>
           </div>
 
           <Link to="/all-games">Back to Catalog</Link>

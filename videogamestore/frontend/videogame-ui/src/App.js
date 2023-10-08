@@ -11,7 +11,10 @@ import GameDetails from './GameDetails';
 
 
 
+
+
 function App() {
+  
   return (
 
     
