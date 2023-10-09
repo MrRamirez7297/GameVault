@@ -80,7 +80,7 @@ public class Populator implements CommandLineRunner {
                 "Star Wars Jedi: Survivor picks up five years after the events of Star Wars Jedi: Fallen Order. Cal must stay one step ahead of the Empire’s constant pursuit as he continues to feel the weight of being one of the last remaining Jedi in the galaxy.",
                 69.99,
                 "Action, Adventure",
-                null);
+                85.0);
         vgRepository.save(game7);
 
         VideoGamesModel game8 = new VideoGamesModel(
@@ -107,7 +107,7 @@ public class Populator implements CommandLineRunner {
                 "In Assassin's Creed Mirage, you are Basim, a cunning street thief with nightmarish visions seeking answers and justice. Join an ancient organization and come to understand a new creed – one that will change Basim’s fate in ways he never could have imagined. Journey to Alamut, the legendary home of the Assassins who laid the foundations of the Creed in this heartfelt homage to the game that started it all.",
                 49.99,
                 "Action",
-                null);
+                88.0);
         vgRepository.save(game10);
 
         VideoGamesModel game11 = new VideoGamesModel(
@@ -370,5 +370,105 @@ public class Populator implements CommandLineRunner {
                 "Sports, Arcade",
                 88.0);
         vgRepository.save(game39);
+
+        VideoGamesModel game40 = new VideoGamesModel(
+                "The Elder Scrolls V: Skyrim",
+                "https://i.ytimg.com/vi/qMIC2_JjkrY/maxresdefault.jpg",
+                "The fifth game in the series, Skyrim takes us on a journey through the coldest region of Cyrodiil. Once again player can traverse the open world RPG armed with various medieval weapons and magic, to become a hero of Nordic legends –Dovahkiin, the Dragonborn. After mandatory character creation players will have to escape not only imprisonment but a fire-breathing dragon. Something Skyrim hasn’t seen in centuries.",
+                19.99,
+                "Action, RPG",
+                94.0);
+        vgRepository.save(game40);
+
+        VideoGamesModel game41 = new VideoGamesModel(
+                "Tomb Raider (2013)",
+                "https://i.ytimg.com/vi/-MriBKTt_vw/maxresdefault.jpg",
+                "A cinematic revival of the series in its action third person form, Tomb Rider follows Lara in her least experience period of life – her youth. Heavily influenced by Naughty Dog’s “Uncharted”, the game is a mix of everything, from stealth and survival to combat and QTE action scenes. Young Lara Croft arrives on the Yamatai, lost island near Japan, as the leader of the expedition in search of the Yamatai Kingdom, with a diverse team of specialists. But shipwreck postponed the successful arrival and seemingly forgotten island is heavily populated with hostile inhabitants, cultists of Solarii Brotherhood. The game will be graphic at times, especially after failed QTE’s during some of the survival scenes, but overall players will enjoy classic action adventure, reminiscent of the beginning of the series.",
+                14.99,
+                "Action, Adventure",
+                86.0);
+        vgRepository.save(game41);
+
+        VideoGamesModel game42 = new VideoGamesModel(
+                "DOOM (2016)",
+                "https://i.ytimg.com/vi/HJFB8Sz_CV0/maxresdefault.jpg",
+                "Return of the classic FPS, Doom (2016) acts as a reboot of the series and brings back the Doomslayer, protagonist of the original Doom games. In order to solve the energy crisis, humanity learned to harvest the energy from Hell, and when something went wrong and a demon invasion has started, it’s up to the player to control the Doomslayer and destroy the evil.",
+                19.99,
+                "Action, Shooter",
+                85.0);
+        vgRepository.save(game42);
+
+        VideoGamesModel game43 = new VideoGamesModel(
+                "Batman: Arkham Knight",
+                "https://i.ytimg.com/vi/Q05OzPAvGbs/maxresdefault.jpg",
+                "Batman: Arkham Knight is the final instalment for the Arkham series by now. Joining forces with Bruce Wayne for the last time, we have to oppose Scarecrow and other iconic villains such as The Riddler, Harleen Quinzel a.k.a. Harley Quinn, Penguin and others. The story continued after events in Arkham City when Joker died due to infection in his blood. Now, Scarecrow tries to release a new fear toxin, meanwhile new mysterious Arkham Knight plots against Batman as well. Still having consequences after being poisoned by the Joker and seeing visions with him, Bruce has to prevail the death of Gotham City.",
+                19.99,
+                "Action",
+                81.0);
+        vgRepository.save(game43);
+
+        VideoGamesModel game44 = new VideoGamesModel(
+                "The Sims 4: Digital Deluxe Edition",
+                "http://www.savegameworld.com/wp-content/uploads/2019/08/PC-Sims-4-Save-File.png",
+                "Enjoy the power to create and control people in a virtual world where there are no rules. Express your creativity as you customize your Sims’ appearances and personalities, and build them the perfect homes. Develop your Sims’ relationships, pursue careers, and explore vibrant new worlds.",
+                66.99,
+                "Strategy, Simulation, Casual",
+                67.0);
+        vgRepository.save(game44);
+
+        VideoGamesModel game45 = new VideoGamesModel(
+                "Sid Meier's Civilization V",
+                "https://gamersgatep.imgix.net/a/b/8/2e5bfd2e61401349346c51d5a82a89ee7c92c8ba.jpg",
+                "Real-time strategy genre has always been about domination over your opponent, and Civilization in general expanded on the concept. Civilization 5 allows players to pick one of the 43 civilizations available in, including DLCs and the expansions. After that players in single player or multiplayer games will place their first cities, which will act as capital, and begin the race. Every civilization is represented by one of the most influential historical figures and voiced in the language of that nation. Easy to pick up game mechanics of research, foraging, and building, allow the player to immerse themselves into the game atmosphere of continuous development.",
+                29.99,
+                "Strategy",
+                90.0);
+        vgRepository.save(game45);
+
+        VideoGamesModel game46 = new VideoGamesModel(
+                "Stardew Valley",
+                "https://i.ytimg.com/vi/2EqrOgisJqM/hq720_live.jpg",
+                "The farm area needs to be cleared, and it will take time. The hero has many different activities: plant and care for plants, raise livestock, practice crafts, extract ore, and also enter into relationships with residents of the neighbouring town to earn game money. Relationships with characters include communication, performing tasks for money, exchanging, searching for fossils and even military actions and marrying. The character is limited by the reserve of strength and health - both parameters are visible on the screen, and the game automatically puts the hero to rest if the limit of his capabilities is close. The game does not set any ultimate or primary goal, its many possibilities are designed for an unlimited time.",
+                14.99,
+                "RPG, Simulation, Indie",
+                89.0);
+        vgRepository.save(game46);
+
+        VideoGamesModel game47 = new VideoGamesModel(
+                "NieR: Automata",
+                "https://www.gamespot.com/a/uploads/original/1406/14063904/3203875-3166347301-Nier-.jpg",
+                "TNieR: Automata is an action RPG, a sequel to Nier and a spin-off to the Drakenguard series. The story is set in the middle of the war between humans and machines where you take on the role of an android warrior called 2B. The story develops around the theme of androids' ability to feel and make their own decisions. The gameplay of NieR: Automata combines RPG elements, such as character progression, with action-based combat and some platforming features, including climbing and jumping over obstacles. Except for traditional light and heavy attacks, there are quick time events that if the completed result in a highly damaging counterattack. You can use four weapon types during the battles: short swords, long swords, bracers, and spears. While you play as a robot, you can upgrade your body with special chips that increase your stats.",
+                39.99,
+                "Action, RPG",
+                86.0);
+        vgRepository.save(game47);
+
+        VideoGamesModel game48 = new VideoGamesModel(
+                "Portal 2",
+                "https://i.ytimg.com/vi/LYv8sw49A0o/maxresdefault.jpg",
+                "Portal 2 is a first-person puzzle game developed by Valve Corporation and released on April 19, 2011 on Steam, PS3 and Xbox 360. Its plot directly follows the first game's, taking place in the Half-Life universe. You play as Chell, a test subject in a research facility formerly ran by the company Aperture Science, but taken over by an evil AI that turned upon its creators, GladOS. After defeating GladOS at the end of the first game but failing to escape the facility, Chell is woken up from a stasis chamber by an AI personality core, Wheatley, as the unkempt complex is falling apart. As the two attempt to navigate through the ruins and escape, they stumble upon GladOS, and accidentally re-activate her...",
+                9.99,
+                "Shooter, Puzzle",
+                95.0);
+        vgRepository.save(game48);
+
+        VideoGamesModel game49 = new VideoGamesModel(
+                "Mario Kart 8 Deluxe",
+                "https://i.ytimg.com/vi/Mz_EQZL788w/maxresdefault.jpg",
+                "Hit the road with the definitive version of Mario Kart 8 and play anytime, anywhere! Race your friends or battle them in a revised battle mode on new and returning battle courses. Play locally in up to 4-player multiplayer in 1080p while playing in TV Mode. Every track from the Wii U version, including DLC, makes a glorious return. Plus, the Inklings appear as all-new guest characters, along with returning favorites, such as King Boo, Dry Bones, and Bowser Jr.!",
+                59.99,
+                "Racing",
+                92.0);
+        vgRepository.save(game49);
+
+        VideoGamesModel game50 = new VideoGamesModel(
+                "Super Smash Bros Ultimate",
+                "https://techraptor.net/sites/default/files/styles/herobanner_desktop/public/2022-04/super%20smash%20bros%20ultimate%20review.jpg",
+                "Super Smash Bros. Ultimate is the fifth game in its franchise. It is also the first game in its series to be released for Nintendo Switch. The series is a crossover of characters from various video game franchises, such as The Legend of Zelda, Pokemon, Sonic the Hedgehog, Super Mario, Metroid, and Mega Man, among many others. Their famous protagonists fight each other on an arena. In accordance with its name, the game is the “ultimate” installment of the series, in that it offers the players all the characters ever featured in Super Smash Bros. Unlike most fighting games, Super Smash Bros. series is built around knocking opponents out of the arena rather than lowering their health bars. However, the damage meter increases the character's chances to be knocked out. Each fighter has a limited number of lives and loses one when he or she is knocked out. The player is eliminated when he or she loses all lives.",
+                59.99,
+                "Fighting",
+                93.0);
+        vgRepository.save(game50);
+
     }
 }
