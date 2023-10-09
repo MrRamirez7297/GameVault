@@ -21,6 +21,8 @@ function GameDetails() {
     fetchGameDetails();
   }, [id]);
 
+  
+
   const addToCartHandler = () => {
     // Check if a game is loaded and add it to the cart
     if (game) {
@@ -50,7 +52,8 @@ function GameDetails() {
           <p>{game.description}</p>
 
           <div class="game-detail-buttons">
-            <button>Buy Now</button>
+            <button onClick={() => { alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Buy Now</button>
+            &nbsp;&nbsp;&nbsp;
             <button onClick={addToCartHandler}>Add to cart</button>
           </div>
 

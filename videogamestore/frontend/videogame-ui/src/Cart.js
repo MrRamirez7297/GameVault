@@ -2,13 +2,17 @@ import React from 'react';
 import { useCart } from './CartContext';
 
 function Cart() {
-    const { cartItems, removeFromCart } = useCart();
+    const { cartItems, removeFromCart, clearCart } = useCart();
 
     // Calculate the total price of items in the cart
     const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
     const handleRemoveFromCart = (itemId) => {
         removeFromCart(itemId);
+    };
+
+    const handleClearCart = () => {
+        clearCart();
     };
 
     return (
@@ -23,11 +27,11 @@ function Cart() {
                 ))}
             </ul>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
-            <p>{cartItems.map((item) => (
-                    <p key={item.id}>
-                        <button onClick={() => { handleRemoveFromCart(item.id); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>))}</p>
+            <p><button onClick={() => { handleClearCart(); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>
         </div>
     );
+    
+    
 }
 
 export default Cart;
