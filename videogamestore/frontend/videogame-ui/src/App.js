@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+/* eslint-disable no-template-curly-in-string */
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
 
@@ -7,10 +7,14 @@ import Home from './Home';
 import Catalog from './Catalog'
 import Cart from './Cart'
 import Search from './Search';
-import GamePage from './GamePage';
+import GameDetails from './GameDetails';
+
+
+
 
 
 function App() {
+  
   return (
 
     
@@ -32,7 +36,7 @@ function App() {
         <Route path="/all-games" element={<Catalog />} />
         <Route path="/your-cart" element={<Cart />} />
         <Route path="/search-game" element={<Search />} />
-        <Route path="/game-page" element={<GamePage />} />
+        <Route path="/game/:id" element={<GameDetails />} />
       </Routes>
 </Router> 
 </div>
