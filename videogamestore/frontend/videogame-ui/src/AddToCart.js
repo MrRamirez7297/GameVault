@@ -17,8 +17,8 @@ function addToCart(game) {
         selectedItem.setAttribute(`id`, addItemId);
         var price = document.createElement(`price`);
         var cartItems = document.getElementsById(`name`);
-        name.innerText = game.player[1].innerText;
-        selectedItem.append(name);
+        game.innerText = game.player[1].innerText;
+        selectedItem.append(game);
         selectedItem.append(price);
         cartItems.append(selectedItem);
     
@@ -31,5 +31,7 @@ function addToCart(game) {
         function del(game){
             document.getElementsById(game).remove();
         }
+
+export default addToCart;
     
     

@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import addToCart from "./AddToCart";
 
 function Catalog() {
   const [Catalog, setCatalog] = useState([]);
@@ -62,6 +63,7 @@ function Catalog() {
                   <div class="description">
                     <p2 id="game-info">{game.description}</p2>
                   </div>
+                  <button onClick={()=> addToCart(game)}>Add to Cart</button>
                   <button onClick={()=> GamePage(game)}>More Info</button>
                 </div>
               </div>
