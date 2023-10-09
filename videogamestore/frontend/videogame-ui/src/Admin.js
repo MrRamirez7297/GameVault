@@ -7,6 +7,7 @@ function Admin() {
     const [name, setName] = useState(null);
     const [description, setDescription] = useState(null);
     const [imageUrl, setImageUrl] = useState(null);
+    const [price, setPrice] = useState(null);
 
     const addGame = async () => {
         try {
@@ -48,6 +49,14 @@ function Admin() {
                         name="image"
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
+                    ></input>
+                    <label for= "#game-price">Price</label>
+                    <input
+                    type="text"
+                        id="game-price"
+                        name="price"
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
                     ></input>
                 </div>
 

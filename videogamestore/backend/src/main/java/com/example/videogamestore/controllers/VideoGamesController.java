@@ -2,9 +2,11 @@ package com.example.videogamestore.controllers;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -45,5 +47,17 @@ public class VideoGamesController {
     }
 
     
+
+    @GetMapping("/game/{id}")
+public ResponseEntity<VideoGamesModel> getGameById(@PathVariable Long id) {
+    Optional<VideoGamesModel> gameOptional = videoGameRepository.findById(id);
+
+    if (gameOptional.isPresent()) {
+        VideoGamesModel game = gameOptional.get();
+        return ResponseEntity.ok(game);
+    } else {
+        return ResponseEntity.notFound().build();
+    }
+}
 
 }

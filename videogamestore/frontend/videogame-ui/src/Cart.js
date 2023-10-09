@@ -1,44 +1,37 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import axios from "axios";
-import './App.css';
-
+import React from 'react';
+import { useCart } from './CartContext';
 
 function Cart() {
-    const [gameCollection, setGameCollection] = useState([]);
+    const { cartItems, removeFromCart, clearCart } = useCart();
 
-    useEffect(() => {
-        async function fetchCollection() {
-            try {
-                const { data } = await axios.get('http://localhost:8080/cart');
-                setGameCollection(data);
-            }
-            catch (error) {
-                console.error('Error fetching collection: ', error);
-            }
-        }
+    // Calculate the total price of items in the cart
+    const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
 
-        fetchCollection();
-    }, []);
+    const handleRemoveFromCart = (itemId) => {
+        removeFromCart(itemId);
+    };
 
-
-
-
-
-
-
+    const handleClearCart = () => {
+        clearCart();
+    };
 
     return (
-
-
-        <div class="cart-container">
-            <h1>Your Cart</h1>
+        <div>
+            <h2>Your Cart</h2>
             <ul>
-                {gameCollection.map( game => (
-                    <li key={game.id}>{game.name} <div>{game.image}</div></li>
+                {cartItems.map((item) => (
+                    <li key={item.id}>
+                        {item.name} - ${item.price}
+                        <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
+                    </li>
                 ))}
             </ul>
+            <p>Total Price: ${totalPrice.toFixed(2)}</p>
+            <p><button onClick={() => { handleClearCart(); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>
         </div>
     );
+    
+    
 }
+
 export default Cart;
