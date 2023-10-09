@@ -23,6 +23,9 @@ function Cart() {
                 ))}
             </ul>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
+            <p>{cartItems.map((item) => (
+                    <p key={item.id}>
+                        <button onClick={() => { handleRemoveFromCart(item.id); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>))}</p>
         </div>
     );
 }
