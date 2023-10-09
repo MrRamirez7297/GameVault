@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
 }
 .App {
@@ -17,8 +17,7 @@
   }
 }
 
-
-#title{
+#title {
   color: white;
 }
 #nav-link {
@@ -29,7 +28,7 @@
   border-radius: 10px;
   background-color: rgb(228, 185, 47);
   color: white;
-  cursor:pointer;
+  cursor: pointer;
   transition: all 0.5s ease-in-out;
 }
 
@@ -44,45 +43,72 @@ nav {
   font-size: 20px;
   color: #000000;
 }
-.container-item2{
-  border-radius: 50px ;
+.container-item2 {
+  border-radius: 50px;
 }
 
-
-.game-container{
+.game-container {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(rgba(25, 30, 36, 0.767), rgba(241, 235, 235, 0.863));
-  justify-content:space-evenly;
+  background: linear-gradient(
+    rgba(25, 30, 36, 0.767),
+    rgba(241, 235, 235, 0.863)
+  );
+  justify-content: space-evenly;
   align-items: center;
   min-height: 200px;
   flex-wrap: wrap;
 }
-.game-library-text{
+.game-library-text {
   color: rgb(243, 242, 240);
   text-shadow: 10px #61dafb;
 }
 
-.games{
-    background-color: rgb(222, 247, 247);
-    padding: 1px;
-    border: 1px solid #000;
-    height: 200px;
-    width: 150px;
+.games {
+  background-color: rgb(15, 199, 199);
+  padding: 1px;
+  border: 1px solid #000;
+  height: 200px;
+  width: 150px;
 }
 
-#game-library-box{
-  display:flex ;
-  flex-direction: row;
-  padding: 100px;
-  margin: 30px;
-  background: linear-gradient(rgba(33, 40, 49, 0.973), rgb(255, 255, 255));
-  
-  border: #282c34 10px ;
-  
+#game-library-box {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  background-color: #202020;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,.07);
+  box-shadow: 0 10px 20px 0 rgba(0,0,0,.07);
+  overflow: hidden;
+  grid-template-columns: repeat(3, 226.667px);
+}
+.game-library-text{
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  font-weight: 900;
+  font-size: 200px;
+  color: lightgoldenrodyellow;
 }
 
-.search-container{
+
+#game-title{
+    margin-bottom: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-bottom: 2px;
+}
+
+.game-library-items {
+  background-color: rgb(161, 187, 181);
+  display: flex;
+  min-width: 980px;
+  flex-direction: grid;
+  padding: 1px;
+  border: 1px solid #000;
+  height: 200px;
+  width: 150px;
+
+}
+.search-container {
   margin: 30px;
 }
 
@@ -94,12 +120,8 @@ nav {
   margin: 30px;
 }
 
-.game-library-items {
-  background-color: rgb(90, 151, 139);
-  
-}
 
-ul{
+
+ul {
   list-style-type: none;
 }
-
