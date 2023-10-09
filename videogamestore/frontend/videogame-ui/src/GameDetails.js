@@ -38,7 +38,7 @@ function GameDetails() {
           {/* Display other game details here */}
           <h2>{game.name}</h2>
           <h4>{game.genre}</h4>
-          <h5>{game.rating}%</h5>
+          <h5>Metascore: {game.rating}%</h5>
           <h3>${game.price}</h3>
           <select>
             <option value="Playstation 5">Playstation 5</option>
