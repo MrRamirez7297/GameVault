@@ -1,6 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import './App.css';
 import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import React from 'react';
 
 import Admin from './Admin';
 import Home from './Home';
@@ -8,20 +9,31 @@ import Catalog from './Catalog'
 import Cart from './Cart'
 import Search from './Search';
 import GameDetails from './GameDetails';
+import LoadWallet from './LoadWallet';
+import { useState } from 'react';
 
 
 
 
 
 function App() {
+
+  const [wallet, setWallet] = useState(0);
+
+  const loadCash = (amount) => {
+    setWallet(wallet + amount);
+  };
   
   return (
 
     
     <div class="App">
       <h1 id="title" >Video Game Store</h1>
+      
       <div> 
 <Router>
+<p id="wallet">Wallet: ${wallet}
+<LoadWallet loadCash={loadCash} /></p>
   <nav>
     <Link id="nav-link" to=""> Home</Link>
     <Link id="nav-link" to="/all-games"> Catalog</Link>
@@ -37,6 +49,7 @@ function App() {
         <Route path="/your-cart" element={<Cart />} />
         <Route path="/search-game" element={<Search />} />
         <Route path="/game/:id" element={<GameDetails />} />
+        <Route path="/load-wallet" element={<LoadWallet />} />
       </Routes>
 </Router> 
 </div>

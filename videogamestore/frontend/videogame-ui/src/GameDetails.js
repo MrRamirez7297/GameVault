@@ -34,6 +34,7 @@ function GameDetails() {
 
   return (
     <div>
+    <br></br>
       {game ? (
         <div>
           <img src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
@@ -56,6 +57,7 @@ function GameDetails() {
             &nbsp;&nbsp;&nbsp;
             <button onClick={addToCartHandler}>Add to cart</button>
           </div>
+          <br></br>
 
           <Link to="/all-games">Back to Catalog</Link>
         </div>
