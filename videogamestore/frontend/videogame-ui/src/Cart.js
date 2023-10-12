@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from './CartContext';
 
+
 function Cart() {
+  const [downloadCode, setDownloadCode] = useState('');
   const { cartItems, removeFromCart, updateQuantity,clearCart } = useCart();
 
 
@@ -26,6 +28,25 @@ function Cart() {
   clearCart();
 };
 
+const handleCheckout = () => {
+  const code = generateRandomCode(); 
+  setDownloadCode(code);  
+  alert(`Thanks for your purchase!\n\nHere's your download code:\n\n${code}`);
+};
+
+const generateRandomCode = () => {
+  const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let code = '';
+  for (let i = 0; i < 12; i++) {
+    const randomIndex = Math.floor(Math.random() * letters.length);
+    code += letters[randomIndex];
+    if (i === 3 || i === 7) {
+      code += '-';
+    }
+  }
+  return code;
+};
+
   return (
     <div>
       <h2>Your Cart</h2>
@@ -44,7 +65,7 @@ function Cart() {
         ))}
       </ul>
       <p>Total Price: ${totalPrice.toFixed(2)}</p>
-       <p><button onClick={() => { handleClearCart(); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>
+      <p><button onClick={handleCheckout}>Checkout</button></p>
 
     </div>
   );
