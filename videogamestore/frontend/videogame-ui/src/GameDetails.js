@@ -22,10 +22,8 @@ function GameDetails() {
   }, [id]);
 
   const addToCartHandler = () => {
-    // Check if a game is loaded and add it to the cart
     if (game) {
-      addToCart(game); // Assuming addToCart accepts a game object
-      // You can provide user feedback here (e.g., a message)
+      addToCart(game);
       alert("Game added to cart!");
     }
   };
@@ -35,7 +33,6 @@ function GameDetails() {
       {game ? (
         <div>
           <img src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
-          {/* Display other game details here */}
           <h2>{game.name}</h2>
           <h4>{game.genre}</h4>
           <h5>{game.rating}%</h5>

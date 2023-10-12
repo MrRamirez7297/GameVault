@@ -2,14 +2,25 @@ import React from 'react';
 import { useCart } from './CartContext';
 
 function Cart() {
-  const { cartItems, removeFromCart } = useCart();
+  const { cartItems, removeFromCart, updateQuantity } = useCart();
 
-  // Calculate the total price of items in the cart
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   const handleRemoveFromCart = (itemId) => {
     removeFromCart(itemId);
   };
+
+  const handleQuantityChange = (itemId, newQuantity) => {
+    updateQuantity(itemId, newQuantity);
+  };
+
+  
+  const quantityOptions = Array.from({ length: 5 }, (_, i) => (
+    <option key={i} value={i + 1}>
+      {i + 1}
+    </option>
+  ));
 
   return (
     <div>
@@ -17,7 +28,13 @@ function Cart() {
       <ul>
         {cartItems.map((item) => (
           <li key={item.id}>
-            {item.name} - ${item.price}
+          {item.name} - ${item.price} {" "}
+            <select
+              value={item.quantity}
+              onChange={(e) => handleQuantityChange(item.id, parseInt(e.target.value, 10))}
+            >
+              {quantityOptions}
+            </select>
             <button onClick={() => handleRemoveFromCart(item.id)}>Remove</button>
           </li>
         ))}
