@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";;
 
 function GameDetails() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
-  const { addToCart } = useCart();
+  const { addToCart,cartItems } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -28,6 +30,28 @@ function GameDetails() {
     }
   };
 
+  const buyNowHandler = () => {
+    if (game) {
+      addToCart(game);
+      const totalPrice = calculateTotalPrice([...cartItems, game]); 
+      navigate("/shipping-page", { state: { totalPrice: totalPrice } });
+    }
+  };
+
+  const calculateTotalPrice = (cartItems) => {
+    return cartItems.reduce((total, item) => {
+      const itemPrice = parseFloat(item.price);
+      const itemQuantity = parseInt(item.quantity, 10);
+  
+      if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
+        total += itemPrice * itemQuantity;
+      }
+  
+      return total;
+    }, 0);
+  };
+
+
   return (
     <div>
       {game ? (
@@ -47,7 +71,11 @@ function GameDetails() {
           <p>{game.description}</p>
 
           <div class="game-detail-buttons">
-            <button>Buy Now</button>
+
+        
+            <button onClick={buyNowHandler}>Buy Now</button>
+          
+            
             <button onClick={addToCartHandler}>Add to cart</button>
           </div>
 
