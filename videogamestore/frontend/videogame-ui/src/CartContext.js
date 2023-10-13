@@ -28,8 +28,19 @@ export function CartProvider({ children }) {
     setCartItems(updatedCart);
   };
 
+  const [wallet, setWallet] = useState(0);
+
   const clearCart = () => {
+    const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  
+    if (wallet < total) {
+      alert('Insufficient funds, please load wallet');
+      return;
+    }
+  
+    setWallet(wallet - total);
     setCartItems([]);
+    alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX');
   };
 
   const updateQuantity = (itemId, newQuantity) => {

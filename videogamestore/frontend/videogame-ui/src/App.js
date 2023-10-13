@@ -25,11 +25,10 @@ function App() {
   };
   
   return (
-
+    
     
     <div class="App">
       <h1 id="title" >Video Game Store</h1>
-      
       <div> 
 <Router>
 <p id="wallet">Wallet: ${wallet}

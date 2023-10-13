@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useCart } from './CartContext';
 
-function Cart() {
+function Cart({ wallet, setWallet }) {
+
     const { cartItems, removeFromCart, clearCart } = useCart();
 
     // Calculate the total price of items in the cart
@@ -27,7 +28,7 @@ function Cart() {
                 ))}
             </ul>
             <p>Total Price: ${totalPrice.toFixed(2)}</p>
-            <p><button onClick={() => { handleClearCart(); alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Checkout</button></p>
+            <p><button onClick={() => { handleClearCart(); }}>Checkout</button></p>
         </div>
     );
     
