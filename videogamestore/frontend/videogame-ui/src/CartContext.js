@@ -2,30 +2,33 @@ import React, { createContext, useContext, useState } from 'react';
 
 const CartContext = createContext();
 
-export function CartProvider({ children }) {
+export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (item) => {
-    // Check if the item is already in the cart
-    const existingItem = cartItems.find((cartItem) => cartItem.id === item.id);
-
-    if (existingItem) {
-      // If the item is already in the cart, update its quantity
-      const updatedCart = cartItems.map((cartItem) =>
-        cartItem.id === item.id
-          ? { ...cartItem, quantity: cartItem.quantity + 1 }
-          : cartItem
-      );
-      setCartItems(updatedCart);
-    } else {
-      // If the item is not in the cart, add it with quantity 1
-      setCartItems([...cartItems, { ...item, quantity: 1 }]);
-    }
+    setCartItems([...cartItems, item]);
   };
 
   const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
-    setCartItems(updatedCart);
+    setCartItems(cartItems.filter((item) => item.id !== itemId));
+  };
+
+  const increaseQuantity = (itemId) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: item.quantity + 1 } : item
+      )
+    );
+  };
+
+  const decreaseQuantity = (itemId) => {
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === itemId && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item
+      )
+    );
   };
 
   const [wallet, setWallet] = useState(0);
@@ -43,20 +46,50 @@ export function CartProvider({ children }) {
     alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX');
   };
 
+  // const [wallet, setWallet] = useState(0);
+
+  // const clearCart = () => {
+  //   const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
+  
+  //   if (wallet < total) {
+  //     alert('Insufficient funds, please load wallet');
+  //     return;
+  //   }
+  
+  //   setWallet(wallet - total);
+  //   setCartItems([]);
+  //   alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX');
+  // };
+
   const updateQuantity = (itemId, newQuantity) => {
-    const updatedCart = cartItems.map((item) =>
-      item.id === itemId ? { ...item, quantity: newQuantity } : item
+    setCartItems(
+      cartItems.map((item) =>
+        item.id === itemId ? { ...item, quantity: newQuantity } : item
+      )
     );
-    setCartItems(updatedCart);
   };
 
+  // const clearCart = () => {
+  //   setCartItems([]);
+  // };
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeFromCart, clearCart, updateQuantity }}>
+    <CartContext.Provider
+      value={{
+        cartItems,
+        addToCart,
+        removeFromCart,
+        increaseQuantity,  
+        decreaseQuantity, 
+        updateQuantity,
+        clearCart
+      }}
+    >
       {children}
     </CartContext.Provider>
   );
-}
+};
 
-export function useCart() {
+export const useCart = () => {
   return useContext(CartContext);
-}
+};

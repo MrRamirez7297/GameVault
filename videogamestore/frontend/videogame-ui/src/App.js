@@ -28,7 +28,7 @@ function App() {
     
     
     <div class="App">
-      <h1 id="title" >Video Game Store</h1>
+      <h1 id="title" >GameVault</h1>
       <div> 
 <Router>
 <p id="wallet">Wallet: ${wallet}

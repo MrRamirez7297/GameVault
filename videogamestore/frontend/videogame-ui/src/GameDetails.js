@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";;
 
 function GameDetails() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
-  const { addToCart } = useCart();
+  const { addToCart,cartItems } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -24,13 +26,33 @@ function GameDetails() {
   
 
   const addToCartHandler = () => {
-    // Check if a game is loaded and add it to the cart
     if (game) {
-      addToCart(game); // Assuming addToCart accepts a game object
-      // You can provide user feedback here (e.g., a message)
+      addToCart(game);
       alert("Game added to cart!");
     }
   };
+
+  const buyNowHandler = () => {
+    if (game) {
+      addToCart(game);
+      const totalPrice = calculateTotalPrice([...cartItems, game]); 
+      navigate("/shipping-page", { state: { totalPrice: totalPrice } });
+    }
+  };
+
+  const calculateTotalPrice = (cartItems) => {
+    return cartItems.reduce((total, item) => {
+      const itemPrice = parseFloat(item.price);
+      const itemQuantity = parseInt(item.quantity, 10);
+  
+      if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
+        total += itemPrice * itemQuantity;
+      }
+  
+      return total;
+    }, 0);
+  };
+
 
   return (
     <div>
@@ -38,7 +60,6 @@ function GameDetails() {
       {game ? (
         <div>
           <img src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
-          {/* Display other game details here */}
           <h2>{game.name}</h2>
           <h4>{game.genre}</h4>
           <h5>Metascore: {game.rating}%</h5>
@@ -53,8 +74,11 @@ function GameDetails() {
           <p>{game.description}</p>
 
           <div class="game-detail-buttons">
-            <button onClick={() => { alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Buy Now</button>
-            &nbsp;&nbsp;&nbsp;
+
+        
+            <button onClick={buyNowHandler}>Buy Now</button>
+          
+            
             <button onClick={addToCartHandler}>Add to cart</button>
           </div>
           <br></br>

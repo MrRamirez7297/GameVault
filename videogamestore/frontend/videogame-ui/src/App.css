@@ -92,3 +92,21 @@ ul{
   list-style-type: none;
 }
 
+.download-code-box {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.code-display {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.code-part {
+  font-size: 24px;
+  padding: 5px;
+  border: 1px solid #000;
+  margin: 2px;
+}
+
