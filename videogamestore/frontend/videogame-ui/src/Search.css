@@ -1,0 +1,58 @@
+.page-container {
+  height: 100%;
+  overflow: hidden;
+}
+
+input {
+  margin-bottom: 160px;
+}
+
+.search-container {
+  margin: 80.5px;
+  padding: 150px;
+  padding-top: 150px;
+}
+
+label {
+  font-size: 35px;
+  font-family: "Bebas Neue", "Nabla";
+  color: #fff;
+  grid-row: 20px;
+  justify-content: center;
+}
+
+.search-info {
+  margin: 30px;
+}
+
+input[type="text"] {
+  width: 130px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+  width: 50%;
+}
+.button {
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: #fff;
+  background-color: #04aa6d;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {
+  background-color: #3e8e41;
+}
+
+.button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

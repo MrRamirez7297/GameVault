@@ -1,11 +1,56 @@
-
 .App {
   text-align: center;
   background: linear-gradient(rgba(25, 30, 36, 0.767), rgba(17, 16, 16, 0.863)),
-  url(https://png.pngtree.com/thumb_back/fh260/background/20201206/pngtree-abstract-dark-blue-gaming-background-design-image_505148.jpg);
+    url(https://png.pngtree.com/thumb_back/fh260/background/20201206/pngtree-abstract-dark-blue-gaming-background-design-image_505148.jpg);
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;}
+  background-attachment: fixed;
+  height: 100%;
+}
+
+#title {
+  color: white;
+
+  font-family: "Bebas Neue", "Nabla";
+  font-weight: 900;
+  font-size: 145px;
+  color: #000000;
+
+  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
+    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+}
+#nav-link {
+  padding: 15px 25px;
+  margin-block: 10px;
+  border: none;
+  border-radius: 15px;
+  background-color: rgb(228, 185, 47);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  outline: none;
+  box-shadow: 0 9px #999;
+  font-size: 35px;
+  font-weight: 600;
+  font-family: "Nabla", sans-serif;
+  margin-top: 45px;
+  text-decoration: none;
+  text-align: center;
+  color: #fff;
+}
+#nav-link:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #555555;
+  transform: translateY(1px);
+  color: #fff;
+}
+
+@keyframes App-logo-spin {
+}
 
 .App-logo {
   height: 40vmin;
@@ -17,57 +62,4 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
-#title {
-  color: white;
-
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-weight: 900;
-  font-size: 50px;
-  color: lightgoldenrodyellow;
-  text-shadow: 5px 5px 5px #51747e;
-}
-#nav-link {
-  display: inline-block;
-  padding: 10px;
-  margin-block: 10px;
-  border: rgb(131, 121, 121) solid 2px;
-  border-radius: 10px;
-  background-color: rgb(228, 185, 47);
-  color: white;
-  cursor: pointer;
-  transition: all 0.5s ease-in-out;
-  
-}
-
-@keyframes App-logo-spin {
-}
-
-nav {
-  display: flex;
-  justify-content: space-evenly;
-  margin-top: 45px;
-  font-weight: 800;
-  font-size: 20px;
-  color: #000000;
-}
-.home-img {
-  border-radius: 50px;
-}
-
-
-
-
-.search-container {
-  margin: 30px;
-}
-
-.search-info {
-  margin: 30px;
-}
-
-.input {
-  margin: 30px;
-}
-
 

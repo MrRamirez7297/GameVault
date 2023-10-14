@@ -34,9 +34,9 @@ function GameDetails() {
   };
 
   return (
-    <div className="page-container">
+    <div >
       {game ? (
-        <div>
+        <div className="page-container">
           <img className ="game-image"src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
           {/* Display other game details here */}
           <h2 className="game-des">{game.name}</h2>
@@ -58,7 +58,7 @@ function GameDetails() {
             <button className="game-detail-buttons" onClick={addToCartHandler}>Add to cart</button>
           </div>
 
-          <Link  className="options" to="/all-games">Back to Catalog</Link>
+          <Link  className="option1" to="/all-games">Back to Catalog</Link>
         </div>
       ) : (
         <p>Loading...</p>
