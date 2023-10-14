@@ -8,7 +8,7 @@ We are building an online video game store that will
   - Genre/style of game (Adventure, Shooter, Sports, etc) - [x]
   - A price for each game - [x]
   - A rating from a review site (IGN, Metacritic, Game Informer) - [x]
-~~- Ability to create a unique account with an e-mail address and name~~
+- ~~- Ability to create a unique account with an e-mail address and name~~
 - Have a search function to find individual games - []
 - Have a cart function that items can be loaded into before checkout - [x]
 - Have a wallet which funds can be loaded on to. Purchase will fail if funds in wallet are insufficient. - [x]
