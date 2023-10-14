@@ -1,0 +1,52 @@
+.game-des{
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    color: rgb(255, 237, 204);
+    text-shadow: 5px 5px 5px #51747ec4;
+}.game-des1{
+    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: rgb(255, 255, 245);
+    text-shadow: 5px 5px 5px #51747ec4;
+}
+.game-image{
+    min-width: 500px;
+    padding: px;
+    border: 5px solid #754d4d;
+    height: 400px;
+    box-sizing: border-box;
+    border-radius: 12px;
+}
+.options{
+    display: inline-block;
+    padding: 10px;
+    border: rgb(131, 121, 121) solid 3px;
+    border-radius: 10px;
+    background-color: rgb(42, 62, 148);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 2px 3px 3px #252525;
+    font-size: 20px;
+    font-weight: 600;
+}
+.game-detail-buttons{
+    display: inline-block;
+    padding: 10px;
+    border: rgb(131, 121, 121) solid 3px;
+    border-radius: 10px;
+    background-color: rgb(42, 62, 148);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 2px 3px 3px #252525;
+    font-size: 20px;
+    font-weight: 600;
+}
+.page-container{
+bottom:0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

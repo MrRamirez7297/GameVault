@@ -1,10 +1,11 @@
-* {
-  margin: 0;
-}
+
 .App {
   text-align: center;
-  background: linear-gradient(rgb(22, 24, 26), rgb(255, 255, 255));
-}
+  background: linear-gradient(rgba(25, 30, 36, 0.767), rgba(17, 16, 16, 0.863)),
+  url(https://png.pngtree.com/thumb_back/fh260/background/20201206/pngtree-abstract-dark-blue-gaming-background-design-image_505148.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;}
 
 .App-logo {
   height: 40vmin;
@@ -19,6 +20,12 @@
 
 #title {
   color: white;
+
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  color: lightgoldenrodyellow;
+  text-shadow: 5px 5px 5px #51747e;
 }
 #nav-link {
   display: inline-block;
@@ -30,6 +37,7 @@
   color: white;
   cursor: pointer;
   transition: all 0.5s ease-in-out;
+  
 }
 
 @keyframes App-logo-spin {
@@ -43,71 +51,13 @@ nav {
   font-size: 20px;
   color: #000000;
 }
-.container-item2 {
+.home-img {
   border-radius: 50px;
 }
 
-.game-container {
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(
-    rgba(25, 30, 36, 0.767),
-    rgba(241, 235, 235, 0.863)
-  );
-  justify-content: space-evenly;
-  align-items: center;
-  min-height: 200px;
-  flex-wrap: wrap;
-}
-.game-library-text {
-  color: rgb(243, 242, 240);
-  text-shadow: 10px #61dafb;
-}
-
-.games {
-  background-color: rgb(15, 199, 199);
-  padding: 1px;
-  border: 1px solid #000;
-  height: 200px;
-  width: 150px;
-}
-
-#game-library-box {
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  background-color: #202020;
-  border-radius: 12px;
-  -webkit-box-shadow: 0 10px 20px 0 rgba(0,0,0,.07);
-  box-shadow: 0 10px 20px 0 rgba(0,0,0,.07);
-  overflow: hidden;
-  grid-template-columns: repeat(3, 226.667px);
-}
-.game-library-text{
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
-  font-weight: 900;
-  font-size: 200px;
-  color: lightgoldenrodyellow;
-}
 
 
-#game-title{
-    margin-bottom: 8px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    padding-bottom: 2px;
-}
 
-.game-library-items {
-  background-color: rgb(161, 187, 181);
-  display: flex;
-  min-width: 980px;
-  flex-direction: grid;
-  padding: 1px;
-  border: 1px solid #000;
-  height: 200px;
-  width: 150px;
-
-}
 .search-container {
   margin: 30px;
 }
@@ -121,7 +71,3 @@ nav {
 }
 
 
-
-ul {
-  list-style-type: none;
-}

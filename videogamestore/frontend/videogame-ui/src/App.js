@@ -19,7 +19,7 @@ function App() {
 
     
     <div class="App">
-      <h1 id="title" >Video Game Store</h1>
+      <h1 id="title" >Game Vault</h1>
       <div> 
 <Router>
   <nav>

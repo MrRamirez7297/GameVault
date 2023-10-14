@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-import { useCart } from "./CartContext";;
+import { useCart } from "./CartContext";
+import "./GameDetails.css";
 
 function GameDetails() {
   const { id } = useParams();
@@ -33,31 +34,31 @@ function GameDetails() {
   };
 
   return (
-    <div>
+    <div className="page-container">
       {game ? (
         <div>
-          <img src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
+          <img className ="game-image"src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
           {/* Display other game details here */}
-          <h2>{game.name}</h2>
-          <h4>{game.genre}</h4>
-          <h5>Metascore: {game.rating}%</h5>
-          <h3>${game.price}</h3>
-          <select>
+          <h2 className="game-des">{game.name}</h2>
+          <h4 className="game-des1">{game.genre}</h4>
+          <h5 className="game-des1">Metascore: {game.rating}%</h5>
+          <h3 className="game-des1">${game.price}</h3>
+          <select  className="options">
             <option value="Playstation 5">Playstation 5</option>
             <option value="Playstation 5">Playstation 4</option>
             <option value="Xbox Series X">Xbox Series X</option>
             <option value="PC">PC</option>
             <option value="Nintendo">Nintendo</option>
           </select>
-          <p>{game.description}</p>
+          <p className="game-des">{game.description}</p>
 
-          <div class="game-detail-buttons">
-            <button onClick={() => { alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Buy Now</button>
+          <div>
+            <button className="game-detail-buttons" onClick={() => { alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Buy Now</button>
             &nbsp;&nbsp;&nbsp;
-            <button onClick={addToCartHandler}>Add to cart</button>
+            <button className="game-detail-buttons" onClick={addToCartHandler}>Add to cart</button>
           </div>
 
-          <Link to="/all-games">Back to Catalog</Link>
+          <Link  className="options" to="/all-games">Back to Catalog</Link>
         </div>
       ) : (
         <p>Loading...</p>
