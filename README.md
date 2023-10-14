@@ -2,18 +2,18 @@
 
 We are building an online video game store that will
 
-- Display a comprehensive library of video games for sale, game library should include:
-  - Cover image for each game
-  - A short description
-  - Genre/style of game (Adventure, Shooter, Sports, etc)
-  - A price for each game
-  - A rating from a review site (IGN, Metacritic, Game Informer)
-- Ability to create a unique account with an e-mail address and name
-- Have a search function to find individual games
-- Have a cart function that items can be loaded into before checkout
-- Have a wallet which funds can be loaded on to. Purchase will fail if funds in wallet are insufficient.
-- Ability to checkout/"purchase" games which will trigger the sending of a receipt to the provided e-mail as well as a random "download code" for the game.
-- Admin page that will be able to add and delete video games from the inventory
+- Display a comprehensive library of video games for sale, game library should include: - [x]
+  - Cover image for each game - [x]
+  - A short description - [x]
+  - Genre/style of game (Adventure, Shooter, Sports, etc) - [x]
+  - A price for each game - [x]
+  - A rating from a review site (IGN, Metacritic, Game Informer) - [x]
+~~- Ability to create a unique account with an e-mail address and name~~
+- Have a search function to find individual games - []
+- Have a cart function that items can be loaded into before checkout - [x]
+- Have a wallet which funds can be loaded on to. Purchase will fail if funds in wallet are insufficient. - [x]
+- Ability to checkout/"purchase" games which will trigger the sending of a receipt ~~to the provided e-mail~~ as well as a random "download code" for the game. - [x]
+- Admin page that will be able to add and delete video games from the inventory - []
 
 ## Getting Started with Create React App
 
