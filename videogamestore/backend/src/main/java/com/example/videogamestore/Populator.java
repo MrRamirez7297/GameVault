@@ -469,6 +469,5 @@ public class Populator implements CommandLineRunner {
                 "Fighting",
                 93.0);
         vgRepository.save(game50);
-
     }
 }

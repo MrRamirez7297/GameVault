@@ -9,6 +9,9 @@ import Cart from './Cart'
 import Search from './Search';
 import GameDetails from './GameDetails';
 
+import ShippingPage from './ShippingPage';
+import ConfirmationPage from './ConfirmationPage';
+
 
 
 
@@ -19,7 +22,7 @@ function App() {
 
     
     <div class="App">
-      <h1 id="title" >Video Game Store</h1>
+      <h1 id="title" >GameVault</h1>
       <div> 
 <Router>
   <nav>
@@ -37,6 +40,8 @@ function App() {
         <Route path="/your-cart" element={<Cart />} />
         <Route path="/search-game" element={<Search />} />
         <Route path="/game/:id" element={<GameDetails />} />
+        <Route path="/shipping-page" element={<ShippingPage />} />
+        <Route path="/thank-you" element={<ConfirmationPage/>} />
       </Routes>
 </Router> 
 </div>
