@@ -7,7 +7,8 @@ import "./GameDetails.css";
 function GameDetails() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
-  const { addToCart } = useCart();
+  const { addToCart,cartItems } = useCart();
+  const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -25,13 +26,33 @@ function GameDetails() {
   
 
   const addToCartHandler = () => {
-    // Check if a game is loaded and add it to the cart
     if (game) {
-      addToCart(game); // Assuming addToCart accepts a game object
-      // You can provide user feedback here (e.g., a message)
+      addToCart(game);
       alert("Game added to cart!");
     }
   };
+
+  const buyNowHandler = () => {
+    if (game) {
+      addToCart(game);
+      const totalPrice = calculateTotalPrice([...cartItems, game]); 
+      navigate("/shipping-page", { state: { totalPrice: totalPrice } });
+    }
+  };
+
+  const calculateTotalPrice = (cartItems) => {
+    return cartItems.reduce((total, item) => {
+      const itemPrice = parseFloat(item.price);
+      const itemQuantity = parseInt(item.quantity, 10);
+  
+      if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
+        total += itemPrice * itemQuantity;
+      }
+  
+      return total;
+    }, 0);
+  };
+
 
   return (
     <div >
@@ -53,9 +74,12 @@ function GameDetails() {
           <p className="game-des">{game.description}</p>
 
           <div>
-            <button className="game-detail-buttons" onClick={() => { alert('Thanks for your purchase!\n\nHere\'s your download code:\n\nXXXX-XXXX-XXXX'); }}>Buy Now</button>
-            &nbsp;&nbsp;&nbsp;
-            <button className="game-detail-buttons" onClick={addToCartHandler}>Add to cart</button>
+
+        
+            <button class="game-detail-buttons" onClick={buyNowHandler}>Buy Now</button>
+          
+            
+            <button class="game-detail-buttons" onClick={addToCartHandler}>Add to cart</button>
           </div>
 
           <Link  className="option1" to="/all-games">Back to Catalog</Link>

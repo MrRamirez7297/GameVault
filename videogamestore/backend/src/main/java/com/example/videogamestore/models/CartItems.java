@@ -40,7 +40,7 @@ public class CartItems {
         this.quantity = quantity;
     }
 
-    public double getPrice() {
+    public Double getPrice() {
         return price;
     }
 
