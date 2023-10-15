@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useCart } from "./CartContext";
-import "./App.css";
+import "./ConfirmationPage.css";
 
 
 
@@ -29,7 +29,7 @@ function ConfirmationPage(){
       };
 
   return(
-    <div className="thank-you-card">
+    <div className="title-c">
     <h1>THANK YOU!</h1>
     <p>Thank you for your purchase at GameVault!</p>
     <p>Please come back soon!</p>
@@ -44,7 +44,7 @@ function ConfirmationPage(){
           ))}
         </div>
       ) : (
-        <button onClick={handleGenerateCode}>Reveal Download Code</button>
+        <button className="code" onClick={handleGenerateCode}>Reveal Download Code</button>
       )}
     </div>
   </div>

@@ -1,0 +1,36 @@
+.code{
+    
+  display: inline-block;
+  padding: 10px;
+  border: rgb(131, 121, 121) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(42, 62, 148);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 2px 3px 3px #252525;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 5.8%;
+}
+.download-code-box {
+    text-align: center;
+    
+  }
+  
+  .code-display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .code-part {
+    font-size: 48px;
+    padding: 5px;
+    border: 1px solid #5e5d5d;
+    border-radius: 20%;
+    margin-bottom: 4.9%;
+    background-color: rgb(85, 131, 172);
+  }
+  

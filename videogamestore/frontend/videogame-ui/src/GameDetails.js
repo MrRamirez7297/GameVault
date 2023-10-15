@@ -7,7 +7,7 @@ import "./GameDetails.css";
 function GameDetails() {
   const { id } = useParams();
   const [game, setGame] = useState(null);
-  const { addToCart,cartItems } = useCart();
+  const { addToCart, cartItems } = useCart();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -23,8 +23,6 @@ function GameDetails() {
     fetchGameDetails();
   }, [id]);
 
-  
-
   const addToCartHandler = () => {
     if (game) {
       addToCart(game);
@@ -35,7 +33,7 @@ function GameDetails() {
   const buyNowHandler = () => {
     if (game) {
       addToCart(game);
-      const totalPrice = calculateTotalPrice([...cartItems, game]); 
+      const totalPrice = calculateTotalPrice([...cartItems, game]);
       navigate("/shipping-page", { state: { totalPrice: totalPrice } });
     }
   };
@@ -44,27 +42,32 @@ function GameDetails() {
     return cartItems.reduce((total, item) => {
       const itemPrice = parseFloat(item.price);
       const itemQuantity = parseInt(item.quantity, 10);
-  
+
       if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
         total += itemPrice * itemQuantity;
       }
-  
+
       return total;
     }, 0);
   };
 
-
   return (
-    <div >
+    <div>
       {game ? (
         <div className="page-container">
-          <img className ="game-image"src={game.imageUrl} alt={game.imageUrl} width="" height="400" />
+          <img
+            className="game-image"
+            src={game.imageUrl}
+            alt={game.imageUrl}
+            width=""
+            height="400"
+          />
           {/* Display other game details here */}
           <h2 className="game-des">{game.name}</h2>
           <h4 className="game-des1">{game.genre}</h4>
           <h5 className="game-des1">Metascore: {game.rating}%</h5>
           <h3 className="game-des1">${game.price}</h3>
-          <select  className="options">
+          <select className="options">
             <option value="Playstation 5">Playstation 5</option>
             <option value="Playstation 5">Playstation 4</option>
             <option value="Xbox Series X">Xbox Series X</option>
@@ -74,15 +77,18 @@ function GameDetails() {
           <p className="game-des">{game.description}</p>
 
           <div>
+            <button class="game-detail-buttons" onClick={buyNowHandler}>
+              Buy Now
+            </button>
 
-        
-            <button class="game-detail-buttons" onClick={buyNowHandler}>Buy Now</button>
-          
-            
-            <button class="game-detail-buttons" onClick={addToCartHandler}>Add to cart</button>
+            <button class="game-detail-buttons" onClick={addToCartHandler}>
+              Add to cart
+            </button>
           </div>
 
-          <Link  className="option1" to="/all-games">Back to Catalog</Link>
+          <Link className="option1" to="/all-games">
+            Back to Catalog
+          </Link>
         </div>
       ) : (
         <p>Loading...</p>

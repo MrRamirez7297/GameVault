@@ -27,6 +27,8 @@ label {
 
 input[type="text"] {
   width: 130px;
+  font-size: 20px;
+  font-weight: 600;
   -webkit-transition: width 0.4s ease-in-out;
   transition: width 0.4s ease-in-out;
 }

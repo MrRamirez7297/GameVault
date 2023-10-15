@@ -46,14 +46,14 @@ function Cart() {
     <div className="container">
       <h2 className="title-c">Your Cart</h2>
       {cartItems.length === 0 ? (
-        <p>Your Cart is Empty</p>
+        <p className="p-c">Your Cart is Empty</p>
       ) : (
         <>
           <ul>
             {cartItems.map((item) => (
               <li className="list" key={item.id}>
                 {item.name} - ${item.price}{" "}
-                <select
+                <select className="select"
                   value={item.quantity}
                   onChange={(e) =>
                     handleQuantityChange(item.id, parseInt(e.target.value, 10))
@@ -63,8 +63,7 @@ function Cart() {
                 </select>
                 <button
                   className="button1"
-                  onClick={() => handleRemoveFromCart(item.id)}
-                >
+                  onClick={() => handleRemoveFromCart(item.id)}>
                   Remove
                 </button>
               </li>
@@ -73,7 +72,7 @@ function Cart() {
           <p className="price">Total Price: ${totalPrice.toFixed(2)}</p>
           <p>
             <Link to="/shipping-page" state={{ totalPrice: totalPrice }}>
-              <button className="button2">Checkout</button>
+              <button className="button1">Checkout</button>
             </Link>
           </p>
         </>
