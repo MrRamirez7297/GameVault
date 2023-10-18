@@ -1,0 +1,10 @@
+
+.home-img {
+    margin-top: 2%;
+    border-radius: 300px;
+    border: 10px solid rgba(140, 170, 179, 0.671);
+    box-sizing: border-box;
+    box-shadow: 10px 20px 60px 50px#000000;
+    margin-bottom: 1.1%;
+    opacity: 0.9;
+  }

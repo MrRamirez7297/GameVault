@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
@@ -31,10 +31,6 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  const [wallet, setWallet] = useState(0);
-
-
-
   const updateQuantity = (itemId, newQuantity) => {
     setCartItems(
       cartItems.map((item) =>
@@ -53,10 +49,10 @@ export const CartProvider = ({ children }) => {
         cartItems,
         addToCart,
         removeFromCart,
-        increaseQuantity,  
-        decreaseQuantity, 
+        increaseQuantity,
+        decreaseQuantity,
         updateQuantity,
-        clearCart
+        clearCart,
       }}
     >
       {children}

@@ -2,14 +2,12 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
-import { BrowserRouter as Router, Route, Link} from "react-router-dom";
-
+import "./Catalog.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function Catalog() {
   const [Catalog, setCatalog] = useState([]);
-  
-  
+
   useEffect(() => {
     async function fetchCatalog() {
       try {
@@ -24,34 +22,25 @@ function Catalog() {
   }, []);
 
   return (
-    <div id="game-library-box">
-      <div>
-        <div>
-          <h1>Game Library goes here! </h1>
-        </div>
-
-        <ul id="game-items">
+    <div class="page-container">
+      <h1 class="catalog-text">Catalog Games </h1>
+      <div >
+        <ul className="game_container">
           {Catalog.map((game) => (
-            <li id="game-items" key={game.id}>
-              <div class="game-library-list">
-                <div id="game-library-items">
-                  <h2 id="game-title">{game.name}</h2>
+            <li  key={game.id}>
+              <div className="game-items">
+                <h2 id="game-title">
+                  {game.name}
 
                   <img
-                    id="idk"
+                    className="game-img"
                     src={game.imageUrl}
                     alt={game.imageUrl}
-                    width="300"
                   />
-              
-                  <div class="description">
-                    <p2 id="game-info">{game.description}</p2>
-                  </div>
-                  
-                  <Link to={`/game/${game.id}`}>
-                    <button>More Info</button>
-                  </Link>
-                </div>
+                </h2>
+                <Link to={`/game/${game.id}`}>
+                  <button className="info_button">More Info</button>
+                </Link>
               </div>
             </li>
           ))}

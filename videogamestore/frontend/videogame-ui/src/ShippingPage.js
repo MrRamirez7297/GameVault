@@ -2,7 +2,6 @@ import { Link, useLocation } from "react-router-dom";
 import React, { useState } from "react";
 
 
-
 function ShippingPage() {
   const { state } = useLocation();
   const totalPrice = state ? state.totalPrice : 0;
@@ -14,19 +13,19 @@ function ShippingPage() {
   };
 
   return (
-    <div>
-      <h1>Shipping Page</h1>
+    <div >
+      <h1 className="title-c">Shipping Page</h1>
 
-      <div class="shipping-container">
-      <p>Total Price: ${totalPrice.toFixed(2)}</p>
-        <div class="shipping-name">
+      <div>
+      <p class="price">Total Price: ${totalPrice.toFixed(2)}</p>
+        <div class="title-c">
           <label for="#first-name">First Name: </label>
           <input type="text" id="first-name" name="first-name"></input>{" "}
           <label for="#last-name">Last Name: </label>
           <input type="text" id="last-name" name="last-name"></input>
         </div>
 
-        <div class="shipping-address">
+        <div class="title-c">
           <label for="#address">Street Address: </label>
           <input type="text" id="address" name="address"></input>
           <label for="#zip-code">Zip Code: </label>
@@ -34,13 +33,13 @@ function ShippingPage() {
           <label for="#city">City: </label>
           <input type="text" id="city" name="city"></input>
           <label for="#state"> State:</label>
-          <select type="selection" id="state " name="state">
+          <select className="options" type="selection" id="state " name="state">
             <option value="State">Alabama</option>
             <option value="State">Alaska</option>
           </select>{" "}
         </div>
 
-        <div class="shipping-contact">
+        <div class="title-c">
           <label for="#email">Email: </label>
           <input type="text" id="email" name="email"></input>
 
@@ -48,13 +47,13 @@ function ShippingPage() {
           <input type="text" id="phone-number" name="phone-number"></input>
         </div>
 
-        <div class="save-continue">
+        <div >
           {" "}
-          <button onClick={handleSaveContinue}>Save & Continue</button>
+          <button class="options" onClick={handleSaveContinue}>Save & Continue</button>
         </div>
 
         {showCreditInfo && (
-          <div className="credit-info">
+          <div className="title-c">
             <label for="#credit-num">Credit Card Number: </label>
             <input
               type="number"
@@ -91,10 +90,10 @@ function ShippingPage() {
               }
             />
 
-            <div className="save-continue">
+            <div >
 
             <Link to="/thank-you">
-              <button>Save & Continue</button>
+              <button className="options">Save & Continue</button>
               </Link>
             </div>
           </div>
