@@ -43,9 +43,9 @@ export const CartProvider = ({ children }) => {
     );
   };
 
-  // const clearCart = () => {
-  //   setCartItems([]);
-  // };
+  const clearCart = () => {
+    setCartItems([]);
+  };
 
   return (
     <CartContext.Provider
