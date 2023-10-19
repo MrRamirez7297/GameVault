@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './LoadWallet.css';
 
 function LoadWallet({ loadCash }) {
     const [amount, setAmount] = useState('');
