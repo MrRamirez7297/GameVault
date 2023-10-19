@@ -27,7 +27,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class VideoGamesController {
 
-    private static final WebClient webClient = null;
+    
     @Autowired
     private VideoGameRepository videoGameRepository;
 
