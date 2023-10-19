@@ -2,12 +2,30 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Catalog from "./Catalog";
+
 
 function Admin() {
     const [name, setName] = useState(null);
     const [description, setDescription] = useState(null);
     const [imageUrl, setImageUrl] = useState(null);
     const [price, setPrice] = useState(null);
+    const [Catalog, setCatalog] = useState([]);
+
+    useEffect(() => {
+        async function fetchCatalog() {
+            try {
+                const { data } = await axios.get("http://localhost:8080/all-games");
+                setCatalog(data);
+            } catch (error) {
+                console.error("Error fetching Catalog: ", error);
+            }
+        }
+
+        fetchCatalog();
+    }, []);
+
 
     const addGame = async () => {
         try {
@@ -19,6 +37,15 @@ function Admin() {
             alert("Game Added!");
         } catch (error) {
             console.error("Error adding game", error);
+        }
+    };
+
+    const deleteGame = async () => {
+        try {
+            await axios.delete(`http://localhost:8080/delete-game/{id}`);
+            alert("Game Deleted!");
+        } catch (error) {
+            console.error("Error deleting game", error);
         }
     };
     return (
@@ -50,9 +77,9 @@ function Admin() {
                         value={imageUrl}
                         onChange={(e) => setImageUrl(e.target.value)}
                     ></input>
-                    <label for= "#game-price">Price</label>
+                    <label for="#game-price">Price</label>
                     <input
-                    type="text"
+                        type="text"
                         id="game-price"
                         name="price"
                         value={price}
@@ -66,6 +93,30 @@ function Admin() {
                     </button>
                 </div>
             </form>
+
+            <div >
+                <ul className="game_container">
+                    {Catalog.map((game) => (
+                        <li key={game.id}>
+                            <div className="game-items">
+                                <h2 id="game-title">
+                                    {game.name}
+
+                                    <img
+                                        className="game-img"
+                                        src={game.imageUrl}
+                                        alt={game.imageUrl}
+                                    />
+                                </h2>
+                                <Link to={`/game/${game.id}`}>
+                                    <button className="info_button">More Info</button>
+                                </Link>
+                                <button id="delete" onClick={() => deleteGame(game.id)}>Delete</button>
+                            </div>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     );
 }

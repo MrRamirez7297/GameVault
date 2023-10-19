@@ -2,6 +2,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./Home.css";
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Admin from "./Admin";
 
 function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -30,6 +32,9 @@ function Home() {
           width="1500px"
         />
       </div>
+    <p>
+    <Link id="admin-link" to="/admin/add-game"> Admin </Link>
+    </p>
     </div>
   );
 }
