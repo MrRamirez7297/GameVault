@@ -11,6 +11,14 @@ import Search from './Search';
 import GameDetails from './GameDetails';
 import LoadWallet from './LoadWallet';
 import { useState } from 'react';
+import ShippingPage from './ShippingPage';
+import ConfirmationPage from './ConfirmationPage';
+
+
+
+
+
+
 
 
 
@@ -39,6 +47,7 @@ function App() {
     <Link id="nav-link" to="/search-game"> Search</Link>
     <Link id="nav-link" to="/your-cart"> Your Cart</Link>
 
+
   </nav>
       <Routes>
 
@@ -49,6 +58,8 @@ function App() {
         <Route path="/search-game" element={<Search />} />
         <Route path="/game/:id" element={<GameDetails />} />
         <Route path="/load-wallet" element={<LoadWallet />} />
+        <Route path="/shipping-page" element={<ShippingPage />} />
+        <Route path="/thank-you" element={<ConfirmationPage/>} />
       </Routes>
 </Router> 
 </div>

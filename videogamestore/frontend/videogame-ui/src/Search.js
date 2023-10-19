@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./App.css";
+import "./Search.css";
 import { BrowserRouter as Router, Route, Link} from "react-router-dom"
 
 function Search() {
@@ -22,7 +22,7 @@ function Search() {
   return (
       <div>
           <input type="text" value={id} onChange={e => setId(e.target.value)} />
-          <button onClick={searchGame}>Search</button>
+          <button className="button"onClick={searchGame}>Search</button>
           {game && (
               <div>
               <h2 id="game-title">{game.name}</h2>
@@ -39,7 +39,7 @@ function Search() {
 </div>
 
 <Link to={`/game/${game.id}`}>
-  <button>More Info</button>
+  <button className="button">More Info</button>
 </Link>
               </div>
           )}
