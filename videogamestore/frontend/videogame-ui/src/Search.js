@@ -102,25 +102,25 @@ function Search() {
   };
 
   return (
-    <div>
-      <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      <button className="button" onClick={searchGame}>
-        Search
-      </button>
-      {game && (
-        <div>
-          <h2 id="game-title">{game.name}</h2>
-          <img id="idk" src={game.imageUrl} alt={game.imageUrl} width="300" />
-          <div class="description">
-            <p2 id="game-info">{game.description}</p2>
-          </div>
-          <Link to={`/game/${game.id}`}>
-            <button className="button">More Info</button>
-          </Link>
-        </div>
-      )}
-    </div>
+      <div>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+          <button className="button"onClick={searchGame}>Search</button>
+          {game && (
+              <div >
+              <h2 id="game-title">{game.name}
+</h2>
+
+<img className="game-img"
+  src={game.imageUrl}
+  alt={game.imageUrl}
+/>
+
+<Link to={`/game/${game.id}`}>
+  <button  className="info_button">More Info</button>
+</Link>
+              </div>
+          )}
+      </div>
   );
 }
-
 export default Search;
