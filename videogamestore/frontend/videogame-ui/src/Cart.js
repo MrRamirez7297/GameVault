@@ -19,7 +19,7 @@ function Cart() {
 
     const newTotalPrice = validCartItems.reduce((total, item) => {
       const itemPrice = parseFloat(item.price);
-      return total + itemPrice ;
+      return total + itemPrice;
     }, 0);
 
         //Debug

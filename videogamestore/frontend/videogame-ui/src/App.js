@@ -10,11 +10,9 @@ import Cart from './Cart'
 import Search from './Search';
 import GameDetails from './GameDetails';
 import LoadWallet from './LoadWallet';
-import { useState } from 'react';
 import ShippingPage from './ShippingPage';
+import { useState } from 'react';
 import ConfirmationPage from './ConfirmationPage';
-
-
 
 
 
