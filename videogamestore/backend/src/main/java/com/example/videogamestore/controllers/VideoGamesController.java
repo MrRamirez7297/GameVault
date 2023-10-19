@@ -83,22 +83,4 @@ public class VideoGamesController {
         }
     }
 
-    // @GetMapping("/game/{name}")
-    // public List<VideoGamesModel> searchGames(@RequestParam String name) {
-    //     return videoGameRepository.findByTitleContaining(name);
-    // }
-
-    // @GetMapping("/game/search/{name}")
-    // public ResponseEntity<List<VideoGamesModel>> getGameByTitle(@PathVariable
-    // String name) {
-    // List<VideoGamesModel> game =
-    // videoGameRepository.findByTitleContainingIgnoreCase(name);
-
-    // if (!game.isEmpty()) {
-    // return ResponseEntity.ok(game);
-    // } else {
-    // return ResponseEntity.notFound().build();
-    // }
-    // }
-
 }

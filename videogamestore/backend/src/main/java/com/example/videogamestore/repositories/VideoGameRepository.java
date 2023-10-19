@@ -8,5 +8,4 @@ import com.example.videogamestore.models.VideoGamesModel;
 
 public interface VideoGameRepository extends CrudRepository<VideoGamesModel, Long>{
 
-    // List<VideoGamesModel> findByTitleContaining(String name);
 }
