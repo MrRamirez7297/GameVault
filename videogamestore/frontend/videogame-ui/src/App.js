@@ -11,9 +11,7 @@ import Search from './Search';
 import GameDetails from './GameDetails';
 import LoadWallet from './LoadWallet';
 import ShippingPage from './ShippingPage';
-import ConfirmationPage from './Cart';
 import { useState } from 'react';
-import ShippingPage from './ShippingPage';
 import ConfirmationPage from './ConfirmationPage';
 
 
