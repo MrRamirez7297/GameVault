@@ -14,6 +14,7 @@ function Search() {
     "zelda": 1,
 
     "Starfield": 2,
+    "starfield": 2,
 
     "Diablo IV": 3,
     "Diablo":3,
