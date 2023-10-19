@@ -14,8 +14,6 @@ import { useState } from 'react';
 
 
 
-
-
 function App() {
 
   const [wallet, setWallet] = useState(0);
