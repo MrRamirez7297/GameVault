@@ -19,6 +19,27 @@ function Search() {
     "Barotrauma":8,
     "Final Fantasy XVI":9,
     "Assassin's Creed Mirage": 10,
+    "The Witcher 3: Wild Hunt": 11,
+    "God of War (2018)": 12,
+    "The Last Of Us":13,
+    "Uncharted 4: A Thief’s End": 14,
+    "Portal": 15,
+    "Max Payne": 16,
+    "Grand Theft Auto V": 17,
+    "Super Mario Odyssey": 18,
+    "Super Mario 64": 19,
+    "Disco Elysium": 20,
+    "Stray": 21,
+    "Elden Ring": 22,
+    "Teenage Mutant Ninja Turtles: Shredder's Revenge": 23,
+    "It Takes Two": 24,
+    "The Legend of Zelda: Breath of the Wild": 25,
+    "Marvel's Spider-Man": 26,
+    "Fallout: New Vegas": 27,
+    "Red Dead Redemption": 28,
+    "Red Dead Redemption 2": 29,
+    "Star Wars: Knights of the Old Republic": 30,
+    
     
   };
 
