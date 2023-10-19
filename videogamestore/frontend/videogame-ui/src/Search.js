@@ -11,6 +11,7 @@ function Search() {
   const gameTitleToIdMap = {
     "The Legend of Zelda: Tears of the Kingdom": 1,
     "Zelda": 1,
+    "zelda": 1,
 
     "Starfield": 2,
 
