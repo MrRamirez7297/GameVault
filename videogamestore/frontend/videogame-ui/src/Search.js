@@ -24,46 +24,22 @@ function Search() {
           <input type="text" value={id} onChange={e => setId(e.target.value)} />
           <button className="button"onClick={searchGame}>Search</button>
           {game && (
-              <div>
-              <h2 id="game-title">{game.name}</h2>
+              <div >
+              <h2 id="game-title">{game.name}
+</h2>
 
-<img
-  id="idk"
+<img className="game-img"
   src={game.imageUrl}
   alt={game.imageUrl}
-  width="300"
 />
 
-<div class="description">
-  <p2 id="game-info">{game.description}</p2>
-</div>
-
 <Link to={`/game/${game.id}`}>
-  <button className="button">More Info</button>
+  <button  className="info_button">More Info</button>
 </Link>
               </div>
           )}
       </div>
   );
-  // return (
-  //   <div class="flex-container">
-  //   <div class="search-info">
-  //   <p1 class="search-info">Search for any game in our catalog by title!</p1>
-  //   </div>
-
-  //     <form action="#">
-  //       <div class="search-container">
-  //         <label for="#game-name">Title of Game:</label>
-  //         <input
-  //           type="text"
-  //           id="game-name"
-  //           name="name"
-  //         ></input>
-  //         <button id="add-game">Search Game</button>
-  //       </div>
-  //     </form>
-  //   </div>
-  // );
 }
 export default Search;
 
