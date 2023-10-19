@@ -13,6 +13,14 @@ import LoadWallet from './LoadWallet';
 import ShippingPage from './ShippingPage';
 import ConfirmationPage from './Cart';
 import { useState } from 'react';
+import ShippingPage from './ShippingPage';
+import ConfirmationPage from './ConfirmationPage';
+
+
+
+
+
+
 
 
 
@@ -38,6 +46,7 @@ function App() {
     <Link id="nav-link" to="/all-games"> Catalog</Link>
     <Link id="nav-link" to="/search-game"> Search</Link>
     <Link id="nav-link" to="/your-cart"> Your Cart</Link>
+
 
   </nav>
       <Routes>
