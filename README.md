@@ -9,7 +9,7 @@ We are building an online video game store that will
   - A price for each game - [x]
   - A rating from a review site (IGN, Metacritic, Game Informer) - [x]
 - ~~- Ability to create a unique account with an e-mail address and name~~
-- Have a search function to find individual games - []
+- Have a search function to find individual games - [x]
 - Have a cart function that items can be loaded into before checkout - [x]
 - Have a wallet which funds can be loaded on to. Purchase will fail if funds in wallet are insufficient. - [x]
 - Ability to checkout/"purchase" games which will trigger the sending of a receipt ~~to the provided e-mail~~ as well as a random "download code" for the game. - [x]
