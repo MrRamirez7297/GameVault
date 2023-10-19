@@ -16,8 +16,8 @@ function Search() {
     "Dead Island 2": 5,
     "Atomic Heart": 6,
     "Star Wars Jedi: Survivor": 7,
-    "Barotrauma":8,
-    "Final Fantasy XVI":9,
+    "Barotrauma": 8,
+    "Final Fantasy XVI": 9,
     "Assassin's Creed Mirage": 10,
     
   };
