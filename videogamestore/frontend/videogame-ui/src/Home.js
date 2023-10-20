@@ -32,9 +32,7 @@ function Home() {
           width="1500px"
         />
       </div>
-    <p>
-    <Link id="admin-link" to="/admin/add-game"> Admin </Link>
-    </p>
+
     </div>
   );
 }
