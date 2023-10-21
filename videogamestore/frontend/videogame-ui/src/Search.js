@@ -100,10 +100,25 @@ function Search() {
       setGame(null);
     }
   };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      searchGame();
+    }
+  };
+
+  // Add a useEffect hook to listen for key presses
+  useEffect(() => {
+    window.addEventListener("keydown", handleKeyPress);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("keydown", handleKeyPress);
+    };
+  }, [handleKeyPress]);
 
   return (
-      <div>
-          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+      <div className="search-container">
+          <input type="search" placeholder="Search..." value={title} onChange={(e) => setTitle(e.target.value)} />
           <button className="button"onClick={searchGame}>Search</button>
           {game && (
               <div >

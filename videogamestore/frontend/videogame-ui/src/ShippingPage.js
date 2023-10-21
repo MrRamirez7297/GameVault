@@ -14,7 +14,7 @@ function ShippingPage() {
 
   return (
     <div >
-      <h1 className="title-c">Shipping Page</h1>
+      <h1 className="title-c">Info Page</h1>
 
       <div>
       <p class="price">Total Price: ${totalPrice.toFixed(2)}</p>
@@ -26,25 +26,11 @@ function ShippingPage() {
         </div>
 
         <div class="title-c">
-          <label for="#address">Street Address: </label>
-          <input type="text" id="address" name="address"></input>
-          <label for="#zip-code">Zip Code: </label>
-          <input type="text" id="zip-code" name="zip-code"></input>
-          <label for="#city">City: </label>
-          <input type="text" id="city" name="city"></input>
-          <label for="#state"> State:</label>
-          <select className="options" type="selection" id="state " name="state">
-            <option value="State">Alabama</option>
-            <option value="State">Alaska</option>
-          </select>{" "}
-        </div>
-
-        <div class="title-c">
           <label for="#email">Email: </label>
-          <input type="text" id="email" name="email"></input>
+          <input type="email" id="email" name="email"></input>
 
           <label for="#phone-number">Phone Number: </label>
-          <input type="text" id="phone-number" name="phone-number"></input>
+          <input type="phone-number" id="phone-number" name="phone-number"></input>
         </div>
 
         <div >
@@ -66,7 +52,7 @@ function ShippingPage() {
               }
             />
 
-            <label for="#credit-cvv">CVV: </label>
+            <label for="#credit-cvv"> CVV: </label>
             <input
               type="number"
               id="credit-cvv"
@@ -78,16 +64,10 @@ function ShippingPage() {
               }
             />
 
-            <label for="#credit-exp">Expiration Date: </label>
+            <label for="#credit-exp"> Expiration Date: </label>
             <input
-              type="number"
+              type="date"
               id="credit-exp"
-              name="credit-exp"
-              inputMode="numeric"
-              pattern="[0-9]"
-              onInput={(e) =>
-                (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
-              }
             />
 
             <div >

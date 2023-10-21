@@ -25,20 +25,17 @@ label {
   margin: 30px;
 }
 
-input[type="text"] {
-  width: 130px;
+input[placeholder="Search..."] {
+  width: 50%;
+  height: 30px;
   font-size: 20px;
   font-weight: 600;
-  -webkit-transition: width 0.4s ease-in-out;
-  transition: width 0.4s ease-in-out;
+  border-radius: 1%;
 }
 
-input[type="text"]:focus {
-  width: 50%;
-}
 .button {
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 15px;
   text-align: center;
   cursor: pointer;
   outline: none;

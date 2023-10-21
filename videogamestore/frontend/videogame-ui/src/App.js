@@ -9,9 +9,7 @@ import Catalog from './Catalog'
 import Cart from './Cart'
 import Search from './Search';
 import GameDetails from './GameDetails';
-import LoadWallet from './LoadWallet';
 import ShippingPage from './ShippingPage';
-import { useState } from 'react';
 import ConfirmationPage from './ConfirmationPage';
 
 
@@ -24,11 +22,6 @@ import ConfirmationPage from './ConfirmationPage';
 
 function App() {
 
-  const [wallet, setWallet] = useState(0);
-
-  const loadCash = (amount) => {
-    setWallet(wallet + amount);
-  };
   
   return (
     
@@ -37,8 +30,6 @@ function App() {
       <h1 id="title" >Game Vault</h1>
       <div> 
 <Router>
-<p id="wallet">Wallet: ${wallet}
-<LoadWallet loadCash={loadCash} /></p>
   <nav>
     <Link id="nav-link" to=""> Home</Link>
     <Link id="nav-link" to="/all-games"> Catalog</Link>
@@ -55,7 +46,6 @@ function App() {
         <Route path="/your-cart" element={<Cart />} />
         <Route path="/search-game" element={<Search />} />
         <Route path="/game/:id" element={<GameDetails />} />
-        <Route path="/load-wallet" element={<LoadWallet />} />
         <Route path="/shipping-page" element={<ShippingPage />} />
         <Route path="/thank-you" element={<ConfirmationPage/>} />
       </Routes>
