@@ -7,9 +7,63 @@ function ShippingPage() {
   const totalPrice = state ? state.totalPrice : 0;
   const [showCreditInfo, setShowCreditInfo] = useState(false);
 
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
+  const [creditNum, setCreditNum] = useState("");
+  const [creditCVV, setCreditCVV] = useState("");
+  const [creditExp, setCreditExp] = useState("");
+  const isCreditInfoValid = creditNum && creditCVV && creditExp;
+  const isFormValid = firstName && lastName && email && phoneNumber;
+  
+
+  const handleCreditInputChange = (event) => {
+    const { name, value } = event.target;
+    switch (name) {
+      case "credit-num":
+        setCreditNum(value);
+        break;
+      case "credit-cvv":
+        setCreditCVV(value);
+        break;
+      case "credit-exp":
+        setCreditExp(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    switch (name) {
+      case "first-name":
+        setFirstName(value);
+        break;
+      case "last-name":
+        setLastName(value);
+        break;
+      case "email":
+        setEmail(value);
+        break;
+      case "phone-number":
+        setPhoneNumber(value);
+        break;
+      default:
+        break;
+    }
+  };
+
+  const handleSaveContinue2 = () => {
+    if (isCreditInfoValid) {
+    }
+  };
 
   const handleSaveContinue = () => {
-    setShowCreditInfo(true);
+    if (isFormValid) {
+      setShowCreditInfo(true);
+    }
   };
 
   return (
@@ -20,36 +74,27 @@ function ShippingPage() {
       <p class="price">Total Price: ${totalPrice.toFixed(2)}</p>
         <div class="title-c">
           <label for="#first-name">First Name: </label>
-          <input type="text" id="first-name" name="first-name"></input>{" "}
+          <input type="text" id="first-name" name="first-name" value={firstName}
+            onChange={handleInputChange}></input>{" "}
           <label for="#last-name">Last Name: </label>
-          <input type="text" id="last-name" name="last-name"></input>
+          <input type="text" id="last-name" name="last-name" value={lastName}
+            onChange={handleInputChange}></input>
         </div>
 
-        <div class="title-c">
-          <label for="#address">Street Address: </label>
-          <input type="text" id="address" name="address"></input>
-          <label for="#zip-code">Zip Code: </label>
-          <input type="text" id="zip-code" name="zip-code"></input>
-          <label for="#city">City: </label>
-          <input type="text" id="city" name="city"></input>
-          <label for="#state"> State:</label>
-          <select className="options" type="selection" id="state " name="state">
-            <option value="State">Alabama</option>
-            <option value="State">Alaska</option>
-          </select>{" "}
-        </div>
-
+        
         <div class="title-c">
           <label for="#email">Email: </label>
-          <input type="text" id="email" name="email"></input>
+          <input type="text" id="email" name="email" value={email}
+            onChange={handleInputChange}></input>
 
           <label for="#phone-number">Phone Number: </label>
-          <input type="text" id="phone-number" name="phone-number"></input>
+          <input type="text" id="phone-number" name="phone-number" value={phoneNumber}
+            onChange={handleInputChange}></input>
         </div>
 
         <div >
           {" "}
-          <button class="options" onClick={handleSaveContinue}>Save & Continue</button>
+          <button class="options" onClick={handleSaveContinue}  disabled={!isFormValid} >Save & Continue</button>
         </div>
 
         {showCreditInfo && (
@@ -59,6 +104,8 @@ function ShippingPage() {
               type="number"
               id="credit-num"
               name="credit-num"
+              value={creditNum}
+              onChange={handleCreditInputChange}
               inputMode="numeric"
               pattern="[0-9]"
               onInput={(e) =>
@@ -71,6 +118,8 @@ function ShippingPage() {
               type="number"
               id="credit-cvv"
               name="credit-cvv"
+              value={creditCVV}
+              onChange={handleCreditInputChange}
               inputMode="numeric"
               pattern="[0-9]"
               onInput={(e) =>
@@ -83,6 +132,8 @@ function ShippingPage() {
               type="number"
               id="credit-exp"
               name="credit-exp"
+              value={creditExp}
+              onChange={handleCreditInputChange}
               inputMode="numeric"
               pattern="[0-9]"
               onInput={(e) =>
@@ -93,7 +144,7 @@ function ShippingPage() {
             <div >
 
             <Link to="/thank-you">
-              <button className="options">Save & Continue</button>
+              <button className="options" onClick={handleSaveContinue2} disabled={!isCreditInfoValid}>Save & Continue</button>
               </Link>
             </div>
           </div>

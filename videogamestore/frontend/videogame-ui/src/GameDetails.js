@@ -24,17 +24,25 @@ function GameDetails() {
   }, [id]);
 
   const addToCartHandler = () => {
-    if (game) {
-      addToCart(game);
-      alert("Game added to cart!");
-    }
+    const existingItem = cartItems.find((item) => item.id === game.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    const newItem = { ...game, quantity: 1 };
+    addToCart(newItem);
+  }
+  alert("Game added to cart!");
   };
 
   const buyNowHandler = () => {
     if (game) {
-      addToCart(game);
-      const totalPrice = calculateTotalPrice([...cartItems, game]);
-      navigate("/shipping-page", { state: { totalPrice: totalPrice } });
+      const existingItem = cartItems.find((item) => item.id === game.id);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    const newItem = { ...game, quantity: 1 };
+    addToCart(newItem);
+  }
     }
   };
 
@@ -56,6 +64,7 @@ function GameDetails() {
     <br></br>
       {game ? (
         <div className="page-container">
+        <div class='img-box'>
           <img
             className="game-image"
             src={game.imageUrl}
@@ -63,7 +72,7 @@ function GameDetails() {
             width=""
             height="400"
           />
-          {/* Display other game details here */}
+          </div>
           <h2 className="game-des">{game.name}</h2>
           <h4 className="game-des1">{game.genre}</h4>
           <h5 className="game-des1">Metascore: {game.rating}%</h5>
