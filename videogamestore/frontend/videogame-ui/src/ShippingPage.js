@@ -42,7 +42,7 @@ function ShippingPage() {
           <div className="title-c">
             <label for="#credit-num">Credit Card Number: </label>
             <input
-              type="number"
+              type="text"
               id="credit-num"
               name="credit-num"
               inputMode="numeric"
@@ -54,13 +54,13 @@ function ShippingPage() {
 
             <label for="#credit-cvv"> CVV: </label>
             <input
-              type="number"
+              type="text"
               id="credit-cvv"
               name="credit-cvv"
               inputMode="numeric"
-              pattern="[0-9]"
+              pattern="[0-3]"
               onInput={(e) =>
-                (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
+                (e.target.value = e.target.value.replace(/[^0-3]/g, ""))
               }
             />
 
