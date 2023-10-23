@@ -89,8 +89,13 @@ function ShippingPage() {
             onChange={handleInputChange}></input>
 
           <label for="#phone-number">Phone Number: </label>
-          <input type="phone-number" id="phone-number" name="phone-number" value={phoneNumber}
-            onChange={handleInputChange}></input>
+          <input type="tel" id="phone-number" name="phone-number" maxLength="10" value={phoneNumber}
+            onChange={(e) => {
+              const sanitizedValue = e.target.value.replace(/\D/g, '');
+              const limitedValue = sanitizedValue.slice(0,10);
+              e.target.value = limitedValue;
+            handleInputChange(e);
+            }}></input>
         </div>
 
         <div >
@@ -102,13 +107,13 @@ function ShippingPage() {
           <div className="title-c">
             <label for="#credit-num">Credit Card Number: </label>
             <input
-              type="text"
+              type="credit-card"
               id="credit-num"
               name="credit-num"
               value={creditNum}
               onChange={handleCreditInputChange}
               inputMode="numeric"
-              pattern="[0-9]"
+              maxLength="16"
               onInput={(e) =>
                 (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
               }
@@ -122,7 +127,7 @@ function ShippingPage() {
               value={creditCVV}
               onChange={handleCreditInputChange}
               inputMode="numeric"
-              pattern="[0-3]"
+              maxLength="3"
               onInput={(e) =>
                 (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
               }
