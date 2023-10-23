@@ -81,26 +81,16 @@ function ShippingPage() {
             onChange={handleInputChange}></input>
         </div>
 
-        <div class="title-c">
-          <label for="#address">Street Address: </label>
-          <input type="text" id="address" name="address"></input>
-          <label for="#zip-code">Zip Code: </label>
-          <input type="text" id="zip-code" name="zip-code"></input>
-          <label for="#city">City: </label>
-          <input type="text" id="city" name="city"></input>
-          <label for="#state"> State:</label>
-          <select className="options" type="selection" id="state " name="state">
-            <option value="State">Alabama</option>
-            <option value="State">Alaska</option>
-          </select>{" "}
-        </div>
+        
 
         <div class="title-c">
           <label for="#email">Email: </label>
-          <input type="email" id="email" name="email"></input>
+          <input type="email" id="email" name="email" value={email}
+            onChange={handleInputChange}></input>
 
           <label for="#phone-number">Phone Number: </label>
-          <input type="phone-number" id="phone-number" name="phone-number"></input>
+          <input type="phone-number" id="phone-number" name="phone-number" value={phoneNumber}
+            onChange={handleInputChange}></input>
         </div>
 
         <div >
@@ -134,7 +124,7 @@ function ShippingPage() {
               inputMode="numeric"
               pattern="[0-3]"
               onInput={(e) =>
-                (e.target.value = e.target.value.replace(/[^0-3]/g, ""))
+                (e.target.value = e.target.value.replace(/[^0-9]/g, ""))
               }
             />
 
@@ -142,6 +132,14 @@ function ShippingPage() {
             <input
               type="date"
               id="credit-exp"
+              name="credit-exp"
+              value={creditExp}
+              onChange={handleCreditInputChange}
+              inputMode="numeric"
+              pattern="[0-9]"
+              
+              
+
             />
 
             <div >
