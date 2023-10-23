@@ -47,8 +47,8 @@ function Cart() {
       <h2 className="title-c">Your Cart</h2>
       {cartItems.length === 0 ? (
         <div className="empty-cart">
-          <p>Your Cart is Empty</p>
-          <Link to="/all-games" className="explore-catalog">
+          <p className="title-c">Your Cart is Empty</p>
+          <Link to="/all-games" className="back">
             Explore Our Catalog
           </Link>
         </div>

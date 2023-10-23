@@ -81,3 +81,18 @@ html,body{
     transform: translateY(1px);
     color: #fff;
 }
+.back{
+  
+  display: inline-block;
+  padding: 10px;
+  border: rgb(131, 121, 121) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(42, 62, 148);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 2px 3px 3px #252525;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
