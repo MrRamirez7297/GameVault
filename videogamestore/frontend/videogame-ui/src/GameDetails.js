@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link,useNavigate } from "react-router-dom";
 import { useCart } from "./CartContext";
 import "./GameDetails.css";
 
@@ -9,6 +9,7 @@ function GameDetails() {
   const [game, setGame] = useState(null);
   const { addToCart, cartItems } = useCart();
   const navigate = useNavigate();
+  
 
   useEffect(() => {
     async function fetchGameDetails() {
@@ -25,39 +26,72 @@ function GameDetails() {
 
   const addToCartHandler = () => {
     const existingItem = cartItems.find((item) => item.id === game.id);
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    const newItem = { ...game, quantity: 1 };
-    addToCart(newItem);
-  }
-  alert("Game added to cart!");
-  };
-
-  const buyNowHandler = () => {
-    if (game) {
-      const existingItem = cartItems.find((item) => item.id === game.id);
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    const newItem = { ...game, quantity: 1 };
-    addToCart(newItem);
-  }
+    if (existingItem) {
+      if (existingItem.quantity !== undefined) {
+        const updatedItem = { ...existingItem, quantity: existingItem.quantity + 1 };
+        addToCart(updatedItem);
+        alert("Game added to cart!");
+      }
+    } else {
+      const newItem = { ...game, quantity: 1 };
+      addToCart(newItem);
+      alert("Game added to cart!");
     }
   };
+  
+  
 
-  const calculateTotalPrice = (cartItems) => {
-    return cartItems.reduce((total, item) => {
+
+const calculateTotalPrice = (cartItems) => {
+    const totalPrice = cartItems.reduce((total, item) => {
       const itemPrice = parseFloat(item.price);
       const itemQuantity = parseInt(item.quantity, 10);
-
+  
       if (!isNaN(itemPrice) && !isNaN(itemQuantity)) {
         total += itemPrice * itemQuantity;
       }
-
+      console.log("Item Price:", itemPrice);
+      console.log("Item Quantity:", itemQuantity);
+      console.log("Running Total:", total);
       return total;
     }, 0);
+    console.log("Total Price calculated in calculateTotalPrice: ", totalPrice);
+    return totalPrice;
   };
+  
+
+
+  const buyNowHandler = () => {
+    if (game) {
+      let updatedCartItems = [...cartItems];
+      const existingItemIndex = updatedCartItems.findIndex((item) => item.id === game.id);
+  
+      if (existingItemIndex !== -1) {
+        updatedCartItems[existingItemIndex].quantity += 1;
+      } else {
+        // Make sure the price is a valid number using parseFloat
+        const newItem = { ...game, quantity: 1, price: parseFloat(game.price) };
+        updatedCartItems.push(newItem);
+      }
+  
+      // Update the cartItems state
+      addToCart(updatedCartItems);
+  
+      // Calculate the updated total price
+      const updatedTotalPrice = calculateTotalPrice(updatedCartItems);
+      navigate("/shipping-page", { state: { totalPrice: updatedTotalPrice } });
+    }
+  };
+  
+  
+
+ 
+
+  
+  
+
+  
+  
 
   return (
     <div>
@@ -87,9 +121,13 @@ function GameDetails() {
           <p className="game-des">{game.description}</p>
 
           <div>
+
+          
             <button class="game-detail-buttons" onClick={buyNowHandler}>
               Buy Now
             </button>
+          
+            
 
             <button class="game-detail-buttons" onClick={addToCartHandler}>
               Add to cart

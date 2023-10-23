@@ -3,6 +3,8 @@ import { useCart } from "./CartContext";
 import { Link } from "react-router-dom";
 import "./Cart.css";
 
+
+
 function Cart() {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
   const [totalPrice, setTotalPrice] = useState(0);
