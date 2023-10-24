@@ -3,8 +3,8 @@ import React, { useState } from "react";
 
 
 function ShippingPage() {
-  const { state } = useLocation();
-  const totalPrice = state ? state.totalPrice : 0;
+  const location = useLocation();
+  const totalPrice = location.state && location.state.totalPrice;
   const [showCreditInfo, setShowCreditInfo] = useState(false);
 
   const [firstName, setFirstName] = useState("");
@@ -57,12 +57,14 @@ function ShippingPage() {
 
   const handleSaveContinue2 = () => {
     if (isCreditInfoValid) {
+      console.log("Save & Continue 2 clicked. Credit Info Valid.");
     }
   };
 
   const handleSaveContinue = () => {
     if (isFormValid) {
       setShowCreditInfo(true);
+      console.log("Save & Continue 1 clicked. Form Valid.");
     }
   };
 
@@ -71,7 +73,7 @@ function ShippingPage() {
       <h1 className="title-c">Info Page</h1>
 
       <div>
-      <p class="price">Total Price: ${totalPrice.toFixed(2)}</p>
+      <p class="price">Total Price:  ${totalPrice ? totalPrice.toFixed(2) : "N/A"}</p>
         <div class="title-c">
           <label for="#first-name">First Name: </label>
           <input type="text" id="first-name" name="first-name" value={firstName}
@@ -90,12 +92,12 @@ function ShippingPage() {
 
           <label for="#phone-number">Phone Number: </label>
           <input type="tel" id="phone-number" name="phone-number" maxLength="10" value={phoneNumber}
-            onChange={(e) => {
+             onChange={(e) => {
               const sanitizedValue = e.target.value.replace(/\D/g, '');
-              const limitedValue = sanitizedValue.slice(0,10);
-              e.target.value = limitedValue;
-            handleInputChange(e);
-            }}></input>
+    const limitedValue = sanitizedValue.slice(0, 10); 
+    e.target.value = limitedValue;
+    handleInputChange(e);
+  }}></input>
         </div>
 
         <div >
