@@ -10,15 +10,23 @@
 }
 
 #title {
-  color: white;
+  color: transparent;
 
   font-family: "Bebas Neue", "Nabla";
   font-weight: 900;
   font-size: 145px;
-  color: #000000;
-
-  text-shadow: 2px 0 #fff, -2px 0 #fff, 0 2px #fff, 0 -2px #fff, 1px 1px #fff,
-    -1px -1px #fff, 1px -1px #fff, -1px 1px #fff;
+  -webkit-text-stroke: 1px #fff;
+  background:#100431 url(star-space.png);
+  -webkit-background-clip: text;
+  background-position: 480 200;
+  animation: back 15s linear infinite;
+  background-size: cover;
+}
+@keyframes back{
+  100%{
+    
+  background-position: -2100px 0;
+  }
 }
 
 nav {
@@ -30,7 +38,7 @@ nav {
   margin-block: 10px;
   border: none;
   border-radius: 15px;
-  background-color: rgb(228, 185, 47);
+  background-color: rgb(3, 103, 150);
   cursor: pointer;
   transition: all 0.5s ease-in-out;
   outline: none;
