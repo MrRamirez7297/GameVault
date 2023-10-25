@@ -1,0 +1,98 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    display: grid;
+    margin: 10%;
+}
+.title-c{
+    
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  font-size: 35px;
+  color: rgb(255, 237, 204);
+  text-shadow: 5px 5px 5px #51747ec4;
+}
+.p-c{
+    
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: rgb(255, 237, 204);
+  text-shadow: 5px 5px 5px #51747ec4;
+  margin: 9%;
+}
+.list{
+    
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: rgb(255, 237, 204);
+  text-shadow: 5px 5px 5px #51747ec4;
+}
+
+.select{
+    
+  display: inline-block;
+  padding: 10px;
+  border: rgb(131, 121, 121) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(42, 62, 148);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 2px 3px 3px #252525;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 2%;
+}
+.price{
+    
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: 500;
+  font-size: 25px;
+  color: rgb(255, 237, 204);
+  text-shadow: 5px 5px 5px #51747ec4;
+}
+.button1{
+    
+  display: inline-block;
+  padding: 10px;
+  border: rgb(131, 121, 121) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(42, 62, 148);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 2px 3px 3px #252525;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-bottom: 24%;
+}
+.button1:active{
+    
+    background-color: #3e8e41;
+    box-shadow: 0 5px #2e1f1f;
+    transform: translateY(1px);
+    color: #fff;
+}
+.back{
+  
+  display: inline-block;
+  padding: 10px;
+  border: rgb(131, 121, 121) solid 3px;
+  border-radius: 10px;
+  background-color: rgb(42, 62, 148);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 2px 3px 3px #252525;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+}
