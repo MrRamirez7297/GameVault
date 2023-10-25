@@ -70,7 +70,7 @@ function ShippingPage() {
 
   return (
     <div >
-      <h1 className="title-c">Info Page</h1>
+      <h1 className="title-c">Info & Payment</h1>
 
       <div>
       <p class="price">Total Price:  ${totalPrice ? totalPrice.toFixed(2) : "N/A"}</p>
